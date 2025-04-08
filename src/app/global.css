@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'SeraPro';
+    src: url('../../public/fonts/CeraPro-Regular.woff') format('woff'),
+         url('../../public/fonts/CeraPro-Regular.ttf') format('truetype');
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'SeraPro';
+    src: url('../../public/fonts/CeraPro-Medium.woff') format('woff'),
+         url('../../public/fonts/CeraPro-Medium.ttf') format('truetype');
+    font-weight: 600;
+  }
+  
+  @font-face {
+    font-family: 'SeraPro';
+    src: url('../../public/fonts/CeraPro-Bold.woff') format('woff'),
+         url('../../public/fonts/CeraPro-Bold.ttf') format('truetype');
+    font-weight: 700;
+  }
+  
+  @font-face {
+    font-family: 'SeraPro';
+    src: url('../../public/fonts/CeraPro-Black.woff') format('woff'),
+         url('../../public/fonts/CeraPro-Black.ttf') format('truetype');
+    font-weight: 900;
+  }
+:root{
+    --primary-text-color: #FFFFFF;
+    --accent-text-color: #F25C3A;
+    --small-text-color: #927398;
+    --h1-font-size: 50px;
+    --h2-font-size: 40px;
+    --h3-font-size: 28px;
+    --h4-font-size: 22px;
+    --h5-font-size: 18px;
+    --paragraph-font-size: 16px;
+    --small-font-size: 14px;
+    --large-margin: 120px;
+    --medium-margin: 60px;
+    --small-margin: 40px;
+    --container-width: 1170px;
+    --bg-color: #2F1634;
+    --font-family: 'SeraPro';
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+    font-family: var(--font-family);
+}
+
+a{
+    color: var(--primary-text-color);
+    text-decoration: none;
+}
+
+h1{
+    font-size: var(--h1-font-size);
+}
+
+h2{
+    font-size: var(--h2-font-size);
+}
+
+h3{
+    font-size: var(--h3-font-size);
+}
+
+h4{
+    font-size: var(--h4-font-size);
+}
+
+h5{
+    font-size: var(--h5-font-size);
+}

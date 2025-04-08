@@ -1,0 +1,41 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 21px 30px;
+}
+
+.left-block, .right-block, .contacts, .social-media{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-block{
+    gap: 60px;
+}
+
+.social-media{
+    gap: 16px;
+}
+
+.right-block{
+    gap: 39px;
+}
+
+.contacts{
+    gap: 20px;
+}
+
+.button{
+    text-transform: uppercase;
+    color: var(--primary-text-color);
+    padding: 3px 16px;
+    background-color: var(--bg-color);
+    outline: 2px solid var(--primary-text-color);
+    font-family: var(--font-family);
+}
+
+.image:hover{
+    opacity: 0.5;
+}
