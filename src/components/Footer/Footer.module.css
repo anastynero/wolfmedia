@@ -1,0 +1,28 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-block{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 49px;
+}
+
+.contacts{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--small-text-color);
+}
+
+.copyright{
+    color: var(--small-text-color);
+    font-size: var(--small-font-size);
+}
+
+.image{
+    fill: var(--small-text-color);
+}

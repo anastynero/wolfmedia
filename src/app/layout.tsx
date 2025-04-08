@@ -17,8 +17,10 @@ export default function RootLayout({
     <html lang="ru">
       <body>
         <Header/>
+        <div className="container">
         <main>{children}</main>
         <Footer/>
+        </div>
       </body>
     </html>
   );

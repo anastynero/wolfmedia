@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 21px 30px;
+    border-bottom: 2px solid #432948;
 }
 
 .left-block, .right-block, .contacts, .social-media{
@@ -13,10 +14,6 @@
 
 .left-block{
     gap: 60px;
-}
-
-.social-media{
-    gap: 16px;
 }
 
 .right-block{
@@ -38,4 +35,8 @@
 
 .image:hover{
     opacity: 0.5;
+}
+
+.telephone{
+    font-weight: 600;
 }
