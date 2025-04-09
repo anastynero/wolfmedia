@@ -6,13 +6,15 @@
     border-bottom: 2px solid #432948;
 }
 
-.left-block, .right-block, .contacts, .social-media{
+.right-block, .contacts, .social-media{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .left-block{
+    display: flex;
+    align-items: center;
     gap: 60px;
 }
 
@@ -39,4 +41,87 @@
 
 .telephone{
     font-weight: 600;
+}
+
+.logo-mini, .icon, .burger{
+    display: none;
+}
+
+@media (max-width: 900px){
+    .logo{
+        width: 165px;
+        height: 40px;
+    }
+
+    .logo-mini, .burger{
+        display: none;
+    }
+
+    .left-block{
+        gap: 30px;
+    }
+
+    .right-block{
+        gap: 20px;
+    }
+
+    .header{
+        padding: 15px 20px;
+    }
+
+    .text{
+        display: none;
+    }
+
+    .icon{
+        display: block;
+    }
+
+}
+
+@media (max-width: 600px){
+    .logo, .burger{
+        display: none;
+    }
+
+    .left-block{
+        gap: 30px;
+    }
+
+    .header{
+        padding: 15px 20px;
+        gap: 50px;
+    }
+
+    .contacts{
+        display: none;
+    }
+
+    .logo-mini{
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+
+}
+
+@media (max-width: 320px){
+    .logo{
+        display: block;
+        width: 144px;
+        height: 35px;
+    }
+
+    .logo-mini, .button, .telephone{
+        display: none;
+    }
+
+    body{
+        background-color: black;
+    }
+
+    .burger, .contacts{
+        display: block;
+    }
+
 }

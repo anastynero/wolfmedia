@@ -44,6 +44,31 @@
     --font-family: 'SeraPro';
 }
 
+@media (max-width: 900px){
+    :root{
+        --container-width: 860px;
+        --h1-font-size: 34px;
+        --h2-font-size: 30px;
+        --h3-font-size: 26px;
+        --h4-font-size: 22px;
+        --h5-font-size: 16px;
+        --paragraph-font-size: 16px;
+        --small-font-size: 14px;
+    }
+}
+
+@media (max-width: 600px){
+    :root{
+        --container-width: 560px;
+    }
+}
+
+@media (max-width: 320px){
+    :root{
+        --container-width: 290px;
+    }
+}
+
 body{
     background-color: var(--bg-color);
     color: var(--primary-text-color);

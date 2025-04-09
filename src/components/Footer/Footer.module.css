@@ -22,7 +22,3 @@
     color: var(--small-text-color);
     font-size: var(--small-font-size);
 }
-
-.image{
-    fill: var(--small-text-color);
-}

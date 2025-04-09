@@ -1,5 +1,29 @@
 .navigation{
     display: flex;
     gap: 50px;
-    text-transform: uppercase;
+    font-size: var(--small-font-size);
+}
+
+.navigation-item{
+    color: var(--small-text-color);
+}
+
+.navigation-item:hover{
+    opacity: 0.5;
+}
+
+.navigation-item:active{
+    color: var(--primary-text-color);
+}
+
+@media (max-width: 900px){
+    .navigation{
+        gap: 30px;
+    }
+}
+
+@media (max-width: 320px){
+    .navigation{
+        display: none;
+    }
 }
