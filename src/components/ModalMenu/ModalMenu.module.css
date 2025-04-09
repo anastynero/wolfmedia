@@ -1,3 +1,4 @@
+@media (max-width: 320px){
 .modal-menu {
     position: fixed;
     top: 80px;
@@ -35,4 +36,9 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 10px;
+}
+}
+
+.modal-menu{
+    display: none;
 }

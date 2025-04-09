@@ -1,0 +1,32 @@
+.h1{
+    font-size: 126px;
+    font-weight: 900;
+}
+
+.h2{
+    color: var(--accent-text-color);
+    font-weight: 900;
+    font-size: var(--h1-font-size);
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.block{
+    padding: 30px 130px;
+    border: 2px solid #604466;
+    text-align: center;
+}
+
+.text{
+    font-weight: 700;
+}
+
+.vector{
+    display: block;
+    margin: 0 auto;
+    margin-top: 60px;
+}

@@ -25,6 +25,7 @@
          url('../../public/fonts/CeraPro-Black.ttf') format('truetype');
     font-weight: 900;
   }
+
 :root{
     --primary-text-color: #FFFFFF;
     --accent-text-color: #F25C3A;
@@ -75,6 +76,8 @@ body{
     color: var(--primary-text-color);
     font-family: var(--font-family);
     margin: 0;
+    background-image: url('../../public/img/background.jpg');
+    background-size: cover
 }
 
 a{
