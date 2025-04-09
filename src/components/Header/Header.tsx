@@ -43,7 +43,9 @@ export default function Header(){
             <Navbar/>
           </section>
           <section className={styles["right-block"]}>
-            <SocialMedia/>
+            <div className={styles["social-media"]}>
+              <SocialMedia />
+            </div>
             <div className={styles.contacts}>
               <Image
               src={telephone}
