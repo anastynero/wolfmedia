@@ -1,3 +1,5 @@
+"use client"
+
 import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '../Navbar/Navbar';
@@ -8,18 +10,17 @@ import SocialMedia from '../SocialMedia/SocialMedia';
 import logo2 from "./../../../public/img/logo-mini.svg";
 import mail from "./../../../public/img/mail.svg";
 import burger from "./../../../public/img/burger.svg";
+import { useState } from "react";
+import ModalMenu from "@/components/ModalMenu/ModalMenu";
 
 export default function Header(){
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openMenu = () => setIsModalOpen(true);
+  const closeMenu = () => setIsModalOpen(false);
     return(
         <header className={styles.header}>
           <section className={styles["left-block"]}>
-          <Image
-                src={burger}
-                alt="Бургер-меню"
-                width={24}
-                height={16}
-                className={styles.burger}
-            />
+          <button className={`${styles.burger} ${isModalOpen ? styles.active : ''}`} onClick={isModalOpen ? closeMenu : openMenu}></button>
             <section className="logo">
             <Link href='/'>
             <Image
@@ -40,7 +41,7 @@ export default function Header(){
             />
             </Link>
             </section>
-            <Navbar/>
+            <div className={styles.navigation}><Navbar/></div>
           </section>
           <section className={styles["right-block"]}>
             <div className={styles["social-media"]}>
@@ -66,6 +67,7 @@ export default function Header(){
             className={styles.icon} />
             </button>
           </section>
+          <ModalMenu isOpen={isModalOpen} onClose={closeMenu} />
         </header>
     );
 }

@@ -1,0 +1,38 @@
+.modal-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 188px;
+    height: calc(100% - 75px);
+    background-color: #3B2341;
+    z-index: 1000;
+    display: none;
+    padding: 30px 15px;
+  }
+  
+.modal-menu.open {
+    display: block;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 219px;
+    align-items: flex-start
+}
+
+.button{
+    text-transform: uppercase;
+    color: var(--primary-text-color);
+    padding: 13px 24px;
+    background-color: inherit;
+    outline: 2px solid var(--primary-text-color);
+    font-family: var(--font-family);
+}
+
+.contacts{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
