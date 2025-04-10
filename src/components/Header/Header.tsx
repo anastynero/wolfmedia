@@ -4,11 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '../Navbar/Navbar';
 import styles from './Header.module.css';
-import logo from "./../../../public/img/logo_light.svg";
-import telephone from "./../../../public/img/telephone.svg"
 import SocialMedia from '../SocialMedia/SocialMedia';
-import logo2 from "./../../../public/img/logo-mini.svg";
-import mail from "./../../../public/img/mail.svg";
+import {logo, telephone, logo2, mail} from './../../images'
 import { useState } from "react";
 import ModalMenu from "@/components/ModalMenu/ModalMenu";
 

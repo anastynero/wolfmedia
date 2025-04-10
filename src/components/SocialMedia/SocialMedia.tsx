@@ -1,10 +1,7 @@
 import styles from './SocialMedia.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import vk from "./../../../public/img/vk.svg";
-import ok from "./../../../public/img/ok.svg";
-import facebook from "./../../../public/img/facebook.svg";
-import twitter from "./../../../public/img/twitter.svg";
+import {vk, ok, facebook, twitter} from './../../images';
 
 export default function SocialMedia(){
     const icons = [
