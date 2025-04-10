@@ -1,0 +1,17 @@
+.button{
+    padding: 12px 42px;
+    color: var(--primary-text-color);
+    background-color: var(--accent-text-color);
+    border: none;
+    font-size: var(--paragraph-font-size);
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+.button:hover{
+    background-color: #FF852D;
+}
+
+.button:active{
+    background-color: #E3432D;
+}

@@ -37,6 +37,18 @@
     background-color: var(--bg-color);
     outline: 2px solid var(--primary-text-color);
     font-family: var(--font-family);
+    font-weight: 600;
+}
+
+.button:hover{
+    background-color: var(--primary-text-color);
+    color: var(--bg-color);
+    outline: none;
+}
+
+.button:active{
+    background-color: #503655;
+    color: var(--primary-text-color);
 }
 
 .image:hover{

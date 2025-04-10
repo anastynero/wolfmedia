@@ -2,6 +2,7 @@ import styles from './About.module.css';
 import image from "./../../../public/img/about-image.svg";
 import imagemob from "./../../../public/img/about-image-mob.svg";
 import Image from 'next/image';
+import Button from '../Button/Button';
 
 export default function About(){
     return(
@@ -29,7 +30,7 @@ youtube-каналы, блоги получают внимание миллио�
                 height={433}
                 className={styles["image-mob"]}
             />
-                <button className={styles.button}>ПОДРОБНЕЕ</button>
+                <Button className={styles.button}>ПОДРОБНЕЕ</Button>
             </div>
         </section>
     )
