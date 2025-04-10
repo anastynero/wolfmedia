@@ -9,7 +9,6 @@ import telephone from "./../../../public/img/telephone.svg"
 import SocialMedia from '../SocialMedia/SocialMedia';
 import logo2 from "./../../../public/img/logo-mini.svg";
 import mail from "./../../../public/img/mail.svg";
-import burger from "./../../../public/img/burger.svg";
 import { useState } from "react";
 import ModalMenu from "@/components/ModalMenu/ModalMenu";
 

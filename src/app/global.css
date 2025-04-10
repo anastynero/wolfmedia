@@ -72,6 +72,7 @@
 @media (max-width: 320px){
     :root{
         --container-width: 290px;
+        --paragraph-font-size: 13px;
     }
 }
 
@@ -83,6 +84,9 @@ body{
     margin: 0;
     background-image: url('../../public/img/background.jpg');
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
 }
 
 a{
