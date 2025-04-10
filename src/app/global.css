@@ -44,6 +44,7 @@
     --bg-color: #2F1634;
     --font-family: 'SeraPro';
     --header-height: 50px;
+    --gap: 30px;
 }
 
 @media (max-width: 900px){
@@ -56,6 +57,9 @@
         --h5-font-size: 16px;
         --paragraph-font-size: 16px;
         --small-font-size: 14px;
+    }
+    .container{
+        margin: 0 20px;
     }
 }
 
@@ -72,12 +76,13 @@
 }
 
 body{
+    box-sizing: border-box;
     background-color: var(--bg-color);
     color: var(--primary-text-color);
     font-family: var(--font-family);
     margin: 0;
     background-image: url('../../public/img/background.jpg');
-    background-size: cover
+    background-size: cover;
 }
 
 a{

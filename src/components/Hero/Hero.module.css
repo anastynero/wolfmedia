@@ -1,6 +1,7 @@
 .h1{
     font-size: 126px;
     font-weight: 900;
+    margin: var(--large-margin) 0;
 }
 
 .h2{
@@ -11,14 +12,15 @@
 
 .wrapper{
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    justify-content: space-between;
+    gap: var(--gap);
 }
 
 .block{
-    padding: 30px 130px;
+    padding: 30px 120px;
     border: 2px solid #604466;
     text-align: center;
+    width: 50%;
 }
 
 .text{
@@ -28,5 +30,50 @@
 .vector{
     display: block;
     margin: 0 auto;
-    margin-top: 60px;
+    margin-top: var(--medium-margin);
+}
+
+@media (max-width: 900px){
+    .h1{
+        font-size: 86px;
+    }
+
+    .vector{
+        margin-top: var(--gap);
+    }
+
+    .block{
+        padding: 30px 50px;
+    }
+
+    .wrapper{
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px){
+    .h1{
+        font-size: 64px;
+    }
+
+    .block{
+        padding: 16px 12px;
+    }
+}
+
+@media (max-width: 320px){
+    .h1{
+        font-size: 36px;
+        margin: 80px 0;
+    }
+
+    .block{
+        padding: 16px 12px;
+        width: 100%;
+    }
+
+    .wrapper{
+        flex-direction: column;
+        gap: 15px;
+    }
 }

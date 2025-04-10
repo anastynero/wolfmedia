@@ -2,6 +2,8 @@
     display: flex;
     gap: 50px;
     font-size: var(--small-font-size);
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .navigation-item{
