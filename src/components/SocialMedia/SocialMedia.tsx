@@ -7,44 +7,25 @@ import facebook from "./../../../public/img/facebook.svg";
 import twitter from "./../../../public/img/twitter.svg";
 
 export default function SocialMedia(){
+    const icons = [
+        {title: "Вконтакте", src: vk, href: "/"},
+        {title: "Одноклассники", src: ok, href: "/"},
+        {title: "Фейсбук", src: facebook, href: "/"},
+        {title: "Твиттер", src: twitter, href: "/"}
+    ]
     return(
         <div className={styles["social-media"]}>
-                <Link href='/'>
-                <Image
-                src={vk}
-                alt="Вконтакте"
-                width={24}
-                height={24}
-                className={styles.image}
-                />
+            {icons.map((item, index)=> (
+                <Link href={item.href} key={index}>
+                    <Image
+                    src={item.src}
+                    alt={item.title}
+                    width={24}
+                    height={24}
+                    className={styles.image}
+                    />
                 </Link>
-                <Link href='/'>
-                <Image
-                src={ok}
-                alt="Одноклассники"
-                width={24}
-                height={24}
-                className={styles.image}
-                />
-                </Link>
-                <Link href='/'>
-                <Image
-                src={facebook}
-                alt="Фейсбук"
-                width={24}
-                height={24}
-                className={styles.image}
-                />
-                </Link>
-                <Link href='/'>
-                <Image
-                src={twitter}
-                alt="Твиттер"
-                width={24}
-                height={24}
-                className={styles.image}
-                />
-                </Link>
+            ))}
             </div>
     );
 }
