@@ -1,0 +1,11 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+.item{
+    padding: 12px 25px;
+    border: 2px solid var(--small-text-color);
+}
+.span{
+    color: var(--accent-text-color);
+}

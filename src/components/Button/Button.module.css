@@ -10,6 +10,7 @@
 
 .button:hover{
     background-color: #FF852D;
+    transition: 0.3s ease;
 }
 
 .button:active{

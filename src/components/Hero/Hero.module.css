@@ -1,7 +1,9 @@
+.hero{
+    padding: var(--large-margin) 0;
+}
 .h1{
     font-size: 126px;
     font-weight: 900;
-    margin: var(--large-margin) 0;
 }
 
 .h2{

@@ -5,7 +5,7 @@ import './global.css'
 
 export const metadata: Metadata = {
   title: "Wolfmedia",
-  description: "",
+  description: "«Wolfmedia» – это редакция, где ежедневно авторы, иллюстраторы, дизайнеры, видеографы, создают уникальный контент и доносят его до огромной аудитории с помощью социальных сетей.",
 };
 
 export default function RootLayout({
@@ -18,10 +18,8 @@ export default function RootLayout({
     <html lang="ru">
       <body>
         <Header/>
-        <div className="container">
-        <main>{children}</main>
+        <main className="container">{children}</main>
         <Footer/>
-        </div>
       </body>
     </html>
   );

@@ -4,7 +4,7 @@ import vector from "./../../../public/img/Vector.svg";
 
 export default function Hero(){
     return(
-        <section className="hero">
+        <section className={styles.hero}>
             <h1 className={styles.h1}>Издательство
             новых медиа</h1>
             <div className={styles.wrapper}>

@@ -1,14 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Footer.module.css'
-import logo from '../../../public/img/footer-logo.svg'
 import SocialMedia from '../SocialMedia/SocialMedia';
-import telephone from "./../../../public/img/telephone-footer.svg";
-import logomini from "./../../../public/img/footer-logo-mini.svg";
+import {logomini, telephone, footerlogo} from './../../images';
+import clsx from 'clsx';
 
 export default function Footer(){
     return(
-        <footer className={styles.footer}>
+        <footer className={clsx(styles.footer, styles.container)}>
             <section className="left-block">
             <Link href="/">
                 <Image
@@ -21,7 +20,7 @@ export default function Footer(){
                 </Link>
                 <Link href="/">
                 <Image
-                src={logo}
+                src={footerlogo}
                 alt="Логотип"
                 width={208}
                 height={51}
@@ -30,7 +29,7 @@ export default function Footer(){
                 </Link>
             </section>
             <div className={styles.copyright}>
-                <p>Copyright 2019 (c) All rights reserved.</p>
+                <p>Copyright 2019&nbsp;&copy; All rights reserved.</p>
             </div>
             <section className={styles["right-block"]}>
                 <SocialMedia/>
