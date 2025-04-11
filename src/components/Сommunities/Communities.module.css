@@ -59,6 +59,7 @@
 
 .tooltip-text{
     color: var(--small-text-color);
+    font-size: var(--small-font-size);
 }
 
 @media (max-width: 900px){
@@ -78,6 +79,16 @@
     .community{
         padding: 26px 0;
     }
+
+    .tooltip{
+        gap: 20px;
+    }
+
+    .tooltip-image{
+        width: 40px;
+        height: 40px;
+    }
+
 }
 
 @media (max-width: 600px){
@@ -92,6 +103,20 @@
 
     .h3{
         font-size: var(--h5-font-size);
+    }
+
+    .tooltip{
+        gap: 5px;
+        padding: 10px;
+    }
+
+    .tooltip-image{
+        width: 30px;
+        height: 30px;
+    }
+
+    .tooltip-text{
+        font-size: 12px;
     }
 }
 
@@ -110,5 +135,14 @@
     .image{
         width: 37px;
         height: 37px;
+    }
+
+    .tooltip-image{
+        width: 25px;
+        height: 25px;
+    }
+
+    .tooltip-text{
+        font-size: 11px;
     }
 }

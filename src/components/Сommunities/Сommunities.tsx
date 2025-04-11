@@ -39,7 +39,7 @@ export default function Communities(){
                             <Image
                             src={item.img}
                             alt={item.text}
-                            className={styles.image}
+                            className={styles["tooltip-image"]}
                             />
                             <p className={styles["tooltip-text"]}>{item.text}</p>
                     </li>
