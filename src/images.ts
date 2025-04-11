@@ -27,8 +27,17 @@ import tracking from './../public/img/eye-tracking.svg';
 import tooltip1 from './../public/img/tooltio-img1.jpg';
 import tooltip2 from './../public/img/tooltio-img2.jpg';
 import tooltip3 from './../public/img/tooltio-img3.jpg';
-
+import hearts from './../public/img/hearts.svg';
+import virus from './../public/img/virus-bug.svg';
+import stars from './../public/img/stars-group.svg';
+import chart from './../public/img/bar-chart.svg';
+import start from './../public/img/start-up.svg';
+import repair from './../public/img/repairing-service.svg';
+import chronometr from './../public/img/chronometer.svg';
+import youtube from './../public/img/youtube.svg';
+import services from './../public/img/services-img.jpg';
 
 export { logo, logo2, mail, telephone, vk, ok, facebook, twitter, chef, football, brain, 
     animal, baby, woman, humor, drawing, airplane, logomini, footerlogo, image1, image2, 
-    image3, image4, content, eye, tracking, tooltip1, tooltip2, tooltip3 };
+    image3, image4, content, eye, tracking, tooltip1, tooltip2, tooltip3, hearts, virus, 
+    stars, chart, repair, chronometr, start, youtube, services };

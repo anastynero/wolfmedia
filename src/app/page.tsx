@@ -4,6 +4,7 @@ import About from "@/components/About/About";
 import Communities from "@/components/Сommunities/Сommunities";
 import Info from "@/components/Info/Info";
 import BrandCommunication from "@/components/BrandCommunication/BrandCommunication";
+import CommunityAutomation from "@/components/CommunityAutomation/CommunityAutomation";
 
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
     <Communities/>
     <Info/>
     <BrandCommunication/>
+    <CommunityAutomation/>
   </div>
   );
 }
