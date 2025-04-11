@@ -13,22 +13,20 @@ export default function BrandCommunication() {
         <section className={styles["brand-communication"]}>
             <h2>ПОМОГАЕМ БРЕНДАМ НАЛАДИТЬ
             КОММУНИКАЦИЮ С АУДИТОРИЕЙ</h2>
-            <p>Социальные сети - идеальная площадка для размещения нативной рекламы, 
+            <p className={styles.paragraph}>Социальные сети - идеальная площадка для размещения нативной рекламы, 
                 она встраивается в ленту пользователя, вызывает большее доверие у аудитории, 
                 обходит блокировщики рекламы, и органически набирает огромные охваты.</p>
             <div className={styles.wrapper}>
                 {items.map((item, index) => (
                 <article className={styles.item} key={index}>
                     <div className={styles.image}>
-                    <Image
-                    src={item.src}
-                    alt='Иконка'
-                    className={styles.icon}
-                    />
+                        <Image
+                        src={item.src}
+                        alt='Иконка'
+                        className={styles.icon}
+                        />
                     </div>
-                    <div className={styles.text}>
-                    <h4>{item.text}</h4>
-                    </div>
+                    <h4 className={styles.text}>{item.text}</h4>
                 </article>
                 ))}
             </div>

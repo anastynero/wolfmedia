@@ -36,9 +36,7 @@
 }
 
 .h2{
-    margin-top: var(--large-margin);
     margin-bottom: var(--medium-margin);
-    font-size: var(--h1-font-size);
 }
 
 .active-image{

@@ -20,12 +20,6 @@
     color: var(--small-text-color);
 }
 
-.h2{
-    margin-top: var(--large-margin);
-    font-size: var(--h1-font-size);
-    font-weight: 900;
-}
-
 .community:hover{
     background-color: #503655;;
 }

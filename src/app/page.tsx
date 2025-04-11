@@ -13,6 +13,7 @@ export default function Home() {
     <About/>
     <Communities/>
     <Info/>
+    <BrandCommunication/>
   </div>
   );
 }
