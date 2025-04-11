@@ -10,6 +10,8 @@
     text-align: center;
     border: 2px solid var(--small-text-color);
     padding: 43px 0;
+    position: relative;
+    cursor: pointer;
 }
 
 .text{
@@ -22,6 +24,41 @@
     margin-top: var(--large-margin);
     font-size: var(--h1-font-size);
     font-weight: 900;
+}
+
+.community:hover{
+    background-color: #503655;;
+}
+
+.community:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+.tooltip{
+    background-color: #fff;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    z-index: 2;
+    padding: 15px 15px;
+    gap: 35px;
+    visibility: hidden;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.tooltip::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: rotateZ(45deg) translateY(15px);
+    border: 10px solid #fff;
+}
+
+.tooltip-text{
+    color: var(--small-text-color);
 }
 
 @media (max-width: 900px){

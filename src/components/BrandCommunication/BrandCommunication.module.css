@@ -1,0 +1,18 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+}
+
+.image{
+    background-color: #3B2341;
+    text-align: center;
+    padding: 38px 135px;
+}
+
+.text{
+    background-color: #503655;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}

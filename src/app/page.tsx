@@ -3,6 +3,7 @@ import RootLayout from "./layout";
 import About from "@/components/About/About";
 import Communities from "@/components/Сommunities/Сommunities";
 import Info from "@/components/Info/Info";
+import BrandCommunication from "@/components/BrandCommunication/BrandCommunication";
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
     <About/>
     <Communities/>
     <Info/>
+    <BrandCommunication/>
   </div>
   );
 }

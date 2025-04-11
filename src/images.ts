@@ -21,7 +21,14 @@ import image1 from './../public/img/gallery-image1.jpg';
 import image2 from './../public/img/gallery-image2.jpg';
 import image3 from './../public/img/gallery-image3.png';
 import image4 from './../public/img/gallery-image4.jpg';
+import content from './../public/img/content.svg';
+import eye from './../public/img/eye.svg';
+import tracking from './../public/img/eye-tracking.svg';
+import tooltip1 from './../public/img/tooltio-img1.jpg';
+import tooltip2 from './../public/img/tooltio-img2.jpg';
+import tooltip3 from './../public/img/tooltio-img3.jpg';
 
 
 export { logo, logo2, mail, telephone, vk, ok, facebook, twitter, chef, football, brain, 
-    animal, baby, woman, humor, drawing, airplane, logomini, footerlogo, image1, image2, image3, image4 };
+    animal, baby, woman, humor, drawing, airplane, logomini, footerlogo, image1, image2, 
+    image3, image4, content, eye, tracking, tooltip1, tooltip2, tooltip3 };
