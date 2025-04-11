@@ -16,7 +16,12 @@ import baby from "./../public/img/baby-carriage.svg";
 import woman from "./../public/img/woman.svg";
 import drawing from "./../public/img/drawing.svg";
 import logomini from "./../public/img/footer-logo-mini.svg";
-import footerlogo from './../public/img/footer-logo.svg'
+import footerlogo from './../public/img/footer-logo.svg';
+import image1 from './../public/img/gallery-image1.jpg';
+import image2 from './../public/img/gallery-image2.jpg';
+import image3 from './../public/img/gallery-image3.png';
+import image4 from './../public/img/gallery-image4.jpg';
+
 
 export { logo, logo2, mail, telephone, vk, ok, facebook, twitter, chef, football, brain, 
-    animal, baby, woman, humor, drawing, airplane, logomini, footerlogo };
+    animal, baby, woman, humor, drawing, airplane, logomini, footerlogo, image1, image2, image3, image4 };

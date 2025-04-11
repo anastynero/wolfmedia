@@ -33,6 +33,11 @@
     margin-top: var(--medium-margin);
 }
 
+.background{
+    z-index: -1;
+    object-fit: cover;
+}
+
 @media (max-width: 900px){
     .h1{
         font-size: 86px;

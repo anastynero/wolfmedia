@@ -1,12 +1,12 @@
 import styles from './Hero.module.css';
 import Image from 'next/image';
 import vector from "./../../../public/img/Vector.svg";
+import backgroundImage from "./../../../public/img/background.jpg"
 
 export default function Hero(){
     return(
         <section className={styles.hero}>
-            <h1 className={styles.h1}>Издательство
-            новых медиа</h1>
+            <h1 className={styles.h1}>ИЗДАТЕЛЬСТВО НОВЫХ МЕДИА</h1>
             <div className={styles.wrapper}>
             <div className={styles.block}>
                 <h2 className={styles.h2}>100 000 000</h2>
@@ -24,6 +24,16 @@ export default function Hero(){
                 height={24}
                 className={styles.vector}
             />
+            <div>
+                <Image
+                  src={backgroundImage}
+                  alt="Фоновое изображение"
+                  fill
+                  priority
+                  quality={100}
+                  className={styles.background}
+                />
+            </div>
         </section>
     );
 }

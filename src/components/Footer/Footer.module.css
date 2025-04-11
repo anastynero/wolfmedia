@@ -1,7 +1,9 @@
-.footer{
+.container{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: var(--container-width);
+    margin: 0 auto;
 }
 
 .right-block{
@@ -28,8 +30,10 @@
 }
 
 @media (max-width: 900px){
-    .footer{
+    .container{
         flex-wrap: wrap;
+        padding: 0 20px;
+        width: 100%;
     }
     .left-block{
         order: 1;
@@ -45,20 +49,8 @@
 }
 
 @media (max-width: 600px){
-    .footer{
-        flex-wrap: wrap;
-    }
-    .left-block{
-        order: 1;
-    }
     .right-block{
-        order: 2;
         gap: 99px;
-    }
-    .copyright{
-        order: 3;
-        flex-basis: 100%;
-        text-align: center;
     }
     .logo-mini{
         display: block;

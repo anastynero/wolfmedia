@@ -7,7 +7,7 @@ import clsx from 'clsx';
 
 export default function Footer(){
     return(
-        <footer className={clsx(styles.footer, styles.container)}>
+        <footer className={styles.container}>
             <section className="left-block">
             <Link href="/">
                 <Image

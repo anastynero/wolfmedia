@@ -7,7 +7,7 @@ import Button from '../Button/Button';
 export default function About(){
     return(
         <section className={styles.about}>
-            <h2 className={styles.h2}>О нас</h2>
+            <h2 className={styles.h2}>О НАС</h2>
             <div className={styles.wrapper}>
                 <p className={styles.text}>&laquo;Wolfmedia&raquo;&nbsp;&mdash; это редакция, где ежедневно авторы, иллюстраторы, дизайнеры, видеографы, создают уникальный контент и&nbsp;доносят его до&nbsp;огромной аудитории с&nbsp;помощью социальных сетей.
 Социальные сети стали главным инструменом коммуникации в&nbsp;21&nbsp;веке. Сообщества, паблики,

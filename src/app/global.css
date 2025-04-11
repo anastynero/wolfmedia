@@ -49,7 +49,7 @@
 
 @media (max-width: 900px){
     :root{
-        --container-width: 860px;
+        --container-width: 100%;
         --h1-font-size: 34px;
         --h2-font-size: 30px;
         --h3-font-size: 26px;
@@ -57,21 +57,20 @@
         --h5-font-size: 16px;
     }
     .container{
-        margin: 0 20px;
-    }
-}
-
-@media (max-width: 600px){
-    :root{
-        --container-width: 560px;
+        padding: 0 20px;
     }
 }
 
 @media (max-width: 320px){
     :root{
-        --container-width: 290px;
         --paragraph-font-size: 13px;
+        --h5-font-size: 14px;
     }
+
+    .container{
+        padding: 0 15px;
+    }
+
 }
 
 body{
@@ -110,6 +109,6 @@ h5{
 }
 
 .container{
-    max-width: var(--container-width);
+    width: var(--container-width);
     margin: 0 auto;
 }
