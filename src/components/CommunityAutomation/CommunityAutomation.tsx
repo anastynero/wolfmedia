@@ -22,19 +22,21 @@ export default function CommunityAutomation(){
     ]
     return(
         <section className={styles["community-automation"]}>
-            <h2>Мы полностью автоматизировали
-            работу по управлению сообществами</h2>
+            <h2>МЫ ПОЛНОСТЬЮ АВТОМАТИЗИРОВАЛИ
+            РАБОТУ ПО УПРАВЛЕНИЮ СООБЩЕСТВАМИ</h2>
             <p>Чем больше сообществ в активе, тем больше времени требуется на планирование, ведение и сбор статистики.</p>
             <h4>Мы подошли к решению этой проблемы технологично - разработали собственный софт, который:</h4>
             <div className={styles.wrapper}>
                 {items.map((items, index) => (
                     <article key={index} className={styles.item}>
+                        <div className={styles["image-block"]}>
                         <Image
                         src={items.icon}
                         alt='Иконка'
                         className={styles.image}
                         />
-                    <h5 className={styles.text}>{items.text} <span className={styles.span}> {items.accent} </span> {items.continuation}</h5>
+                        </div>
+                            <h5 className={styles.text}>{items.text} <span className={styles.span}> {items.accent} </span> {items.continuation}</h5>
                     </article>
                 ))}
             </div>
@@ -54,14 +56,20 @@ export default function CommunityAutomation(){
                 ))}
                 </div>
                 </div>
+                <Button className={styles.button}>ПОДРОБНЕЕ</Button>
                 <figure className={styles.video}>
                     <Image
                         src={services}
                         alt='Услуги'
                         className={styles["services-image"]} 
+
+                    />
+                    <Image
+                        src={youtube}
+                        alt='YouTube'
+                        className={styles["image-icon"]}
                     />
                 </figure>
-                <Button className={styles.button}>ПОДРОБНЕЕ</Button>
         </section>
         </section>
     )

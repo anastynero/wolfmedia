@@ -9,7 +9,6 @@
     background-color: #3B2341;
     display: flex;  
     flex-direction: column; 
-    min-height: 200px;   
 }
 
 .text {
@@ -19,10 +18,6 @@
     padding: 18px;
 }
 
-.image{
-    margin: 40 auto;
-}
-
 .span{
     color: var(--accent-text-color);
 }
@@ -30,8 +25,153 @@
 .services{
     display: grid;
     grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 30px;
 }
 
 .services-item{
     border: 2px solid #503655;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 15px;
+}
+
+.services-wrapper{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.services-text{
+    margin: 0;
+}
+
+.services-image{
+    opacity: 0.2;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.button{
+    margin-top: 40px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    align-self: start;
+    justify-self: start;
+}
+
+.image-icon{
+    position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.video{
+    padding: 0;
+    position: relative;
+    grid-row: span 2;
+    align-self: start;
+}
+
+.image-block{
+    padding: 40px;
+}
+
+@media (max-width: 900px) {
+    .services{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .services-wrapper{
+        flex-direction: row;
+        justify-content: space-between;
+        order: 1;
+    }
+
+    .services-image{
+        order: 2;
+    }
+
+    .button{
+        order: 3;
+        align-self: flex-start;
+    }
+
+    .video{
+        align-self: auto;
+    }
+
+    .services-icon{
+        width: 44px;
+        height: 44px;
+    }
+
+    .image-block{
+        padding: 38px;
+    }
+
+    .wrapper{
+        gap: 20px;
+    }
+}
+
+@media (width: 600px){
+    .wrapper{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .services-icon{
+        width: 28px;
+        height: 28px;
+    }
+
+    .services-wrapper{
+        gap: 20px;
+    }
+}
+
+@media (max-width: 320px){
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .services-icon{
+        width: 28px;
+        height: 28px;
+    }
+
+    .item {
+        flex-direction: row;  
+    }
+
+    .text {       
+        margin-top: 0;
+        padding: 10px;
+    }
+
+    .image{
+        width: 48px;
+        height: 48px;
+
+    }
+
+    .services-wrapper{
+        flex-direction: column;
+
+    }
+
+    .image-block{
+        padding: 14px;
+    }
 }
