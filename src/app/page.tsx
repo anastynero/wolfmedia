@@ -5,6 +5,7 @@ import Communities from "@/components/Сommunities/Сommunities";
 import Info from "@/components/Info/Info";
 import BrandCommunication from "@/components/BrandCommunication/BrandCommunication";
 import CommunityAutomation from "@/components/CommunityAutomation/CommunityAutomation";
+import Contacts from "@/components/Contacts/Contacts";
 
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
     <Info/>
     <BrandCommunication/>
     <CommunityAutomation/>
+    <Contacts/>
   </div>
   );
 }

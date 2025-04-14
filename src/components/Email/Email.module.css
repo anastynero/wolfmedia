@@ -1,0 +1,9 @@
+.email{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.email-text{
+    text-decoration: underline dashed #6D5C71;
+}

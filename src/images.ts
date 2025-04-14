@@ -36,8 +36,11 @@ import repair from './../public/img/repairing-service.svg';
 import chronometr from './../public/img/chronometer.svg';
 import youtube from './../public/img/youtube.svg';
 import services from './../public/img/services-img.jpg';
+import contacts1 from './../public/img/contacts-1.png';
+import contacts2 from './../public/img/contacts-2.png';
+import back from './../public/img/back.svg';
 
 export { logo, logo2, mail, telephone, vk, ok, facebook, twitter, chef, football, brain, 
     animal, baby, woman, humor, drawing, airplane, logomini, footerlogo, image1, image2, 
     image3, image4, content, eye, tracking, tooltip1, tooltip2, tooltip3, hearts, virus, 
-    stars, chart, repair, chronometr, start, youtube, services };
+    stars, chart, repair, chronometr, start, youtube, services, contacts1, contacts2, back };
