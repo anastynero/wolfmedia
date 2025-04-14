@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Navbar from '../Navbar/Navbar';
 import styles from './Header.module.css';
 import SocialMedia from '../SocialMedia/SocialMedia';
-import {logo, telephone, logo2, mail} from './../../images'
+import {logo, telephone, logo2, mail} from './../../images';
 import { useState } from "react";
 import ModalMenu from "@/components/ModalMenu/ModalMenu";
 

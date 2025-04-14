@@ -6,4 +6,5 @@
 
 .email-text{
     text-decoration: underline dashed #6D5C71;
+    text-underline-offset: 4px;
 }

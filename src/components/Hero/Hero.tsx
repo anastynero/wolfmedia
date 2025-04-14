@@ -24,7 +24,7 @@ export default function Hero(){
                 height={24}
                 className={styles.vector}
             />
-            <div>
+            <div className={styles["bg-container"]}>
                 <Image
                   src={backgroundImage}
                   alt="Фоновое изображение"

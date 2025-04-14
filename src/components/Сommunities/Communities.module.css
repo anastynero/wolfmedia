@@ -21,7 +21,8 @@
 }
 
 .community:hover{
-    background-color: #503655;;
+    background-color: #503655;
+    transition: 0.8s ease;
 }
 
 .community:hover .tooltip {

@@ -1,7 +1,7 @@
 @media (max-width: 320px){
 .modal-menu {
     position: fixed;
-    top: 80px;
+    top: 60px;
     left: 0;
     width: 188px;
     height: calc(100% - 75px);

@@ -6,6 +6,15 @@ import './global.css'
 export const metadata: Metadata = {
   title: "Wolfmedia",
   description: "«Wolfmedia» – это редакция, где ежедневно авторы, иллюстраторы, дизайнеры, видеографы, создают уникальный контент и доносят его до огромной аудитории с помощью социальных сетей.",
+  openGraph: {
+    images: [
+      {
+        url: 'http://localhost:3000/img/logo-light.svg', 
+      },
+    ],
+    locale: 'ru_RU',
+    type: 'website',
+  }
 };
 
 export default function RootLayout({

@@ -6,16 +6,37 @@
     overflow: hidden;
 }
 
-.navigation-item{
+.navigation-item {
+    position: relative;
     color: var(--small-text-color);
+    padding-bottom: 5px;
 }
 
 .navigation-item:hover{
-    opacity: 0.5;
+    color: var(--primary-text-color);
 }
 
-.navigation-item:active{
+.navigation-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-text-color);
+    transition: width 0.5s ease; 
+}
+
+.navigation-item:hover::after {
+    width: 100%;
+}
+
+.navigation-item:focus{
     color: var(--primary-text-color);
+}
+
+.navigation-item:focus::after{
+    width: 100%;
 }
 
 @media (max-width: 900px){
