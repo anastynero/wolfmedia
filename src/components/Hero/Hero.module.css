@@ -1,6 +1,7 @@
 .hero{
-    padding-top: var(--large-margin);
+    padding-top: 65px;
 }
+
 .h1{
     font-size: 126px;
     font-weight: 900;

@@ -7,7 +7,8 @@ import clsx from 'clsx';
 
 export default function Footer(){
     return(
-        <footer className={styles.container}>
+        <footer className={styles.footer}>
+            <div className={styles.container}>
             <section className="left-block">
             <Link href="/">
                 <Image
@@ -44,6 +45,7 @@ export default function Footer(){
                 <h5 className={styles.telephone}>+7 495 257 55 65</h5>
                 </div>
             </section>
+            </div>
         </footer>
     );
 }

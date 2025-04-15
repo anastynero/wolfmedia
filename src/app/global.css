@@ -49,20 +49,18 @@
 
 @media (max-width: 900px){
     :root{
-        --container-width: 100%;
+        --container-width: 860px;
         --h1-font-size: 34px;
         --h2-font-size: 30px;
         --h3-font-size: 26px;
         --h4-font-size: 22px;
         --h5-font-size: 16px;
     }
-    .container{
-        padding: 0 20px;
-    }
 }
 
 @media (max-width: 600px){
     :root{
+        --container-width: 560px;
         --h1-font-size: 30px;
         --h2-font-size: 26px;
         --h3-font-size: 18px;
@@ -73,27 +71,27 @@
 
 @media (max-width: 320px){
     :root{
+        --container-width: 287px;
         --paragraph-font-size: 13px;
         --h1-font-size: 26px;
         --h2-font-size: 24px;
         --h3-font-size: 14px;
         --h4-font-size: 14px;
         --h5-font-size: 14px;
+        --large-margin: 80px;
     }
-
-    .container{
-        padding: 0 15px;
-    }
-
 }
 
-body{
+* {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+body{
     background-color: var(--bg-color);
     color: var(--primary-text-color);
     font-family: var(--font-family);
-    margin: 0;
-    background-color: var(--bg-color);
 }
 
 a{
@@ -103,6 +101,8 @@ a{
 
 h1{
     font-size: var(--h1-font-size);
+    margin-top: var(--large-margin);
+    margin-bottom: var(--large-margin);;
 }
 
 h2{
@@ -126,10 +126,21 @@ h5{
 .container{
     width: var(--container-width);
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 figure{
-    margin: 0;
     margin-top: 40px;
 }
 
+@media (max-width: 900px){
+    .container{
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 320px){
+    .container{
+        padding: 0 15px;
+    }
+}

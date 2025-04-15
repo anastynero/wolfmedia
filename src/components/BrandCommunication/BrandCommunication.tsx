@@ -11,7 +11,7 @@ export default function BrandCommunication() {
     ]
     return(
         <section className={styles["brand-communication"]}>
-            <h2>ПОМОГАЕМ БРЕНДАМ НАЛАДИТЬ
+            <h2 className={styles.h2}>ПОМОГАЕМ БРЕНДАМ НАЛАДИТЬ
             КОММУНИКАЦИЮ С АУДИТОРИЕЙ</h2>
             <p className={styles.paragraph}>Социальные сети - идеальная площадка для размещения нативной рекламы, 
                 она встраивается в ленту пользователя, вызывает большее доверие у аудитории, 

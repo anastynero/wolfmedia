@@ -4,7 +4,18 @@
     gap: 16px;
 }
 
+.email:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
 .email-text{
     text-decoration: underline dashed #6D5C71;
     text-underline-offset: 4px;
+}
+
+@media (max-width: 320px) {
+    .email-text{
+        font-size: 13px;
+    }
 }

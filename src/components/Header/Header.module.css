@@ -1,9 +1,9 @@
 .header{
     display: flex;
-    gap: 100px;
-    align-items: center;
+    justify-content: space-between;
     padding: 20px 30px;
     position: fixed;
+    width: 100%;
 }
 
 .header::before {
@@ -19,6 +19,10 @@
     z-index: -1;
     border-bottom: 2px solid #432948;
   }
+
+.logo{
+    cursor: pointer;
+}
 
 .logo:hover{
     opacity: 0.5;
@@ -58,6 +62,7 @@
     outline: 2px solid var(--primary-text-color);
     font-family: var(--font-family);
     font-weight: 600;
+    cursor: pointer;
 }
 
 .button:hover{
@@ -85,12 +90,21 @@
     display: none;
 }
 
+.contacts{
+    cursor: pointer;
+}
+
+.contacts:hover{
+    opacity: 0.5;
+}
+
 .burger {
     position: relative;
     border: none;
     background: transparent;
     width: 24px;
     height: 17px;
+    cursor: pointer;
   }
   .burger::before,
   .burger::after {
@@ -169,10 +183,6 @@
 
     .left-block{
         gap: 30px;
-    }
-
-    .header{
-        padding: 15px 20px;
     }
 
     .contacts{

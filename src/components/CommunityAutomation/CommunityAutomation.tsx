@@ -21,11 +21,11 @@ export default function CommunityAutomation(){
         {icon: chronometr, text: 'Аренда сообществ'}
     ]
     return(
-        <section className={styles["community-automation"]}>
-            <h2>МЫ ПОЛНОСТЬЮ АВТОМАТИЗИРОВАЛИ
+        <section className={styles["community-automation"]} id='services'>
+            <h2 className={styles.h2}>МЫ ПОЛНОСТЬЮ АВТОМАТИЗИРОВАЛИ
             РАБОТУ ПО УПРАВЛЕНИЮ СООБЩЕСТВАМИ</h2>
-            <p>Чем больше сообществ в активе, тем больше времени требуется на планирование, ведение и сбор статистики.</p>
-            <h4>Мы подошли к решению этой проблемы технологично - разработали собственный софт, который:</h4>
+            <p className={styles.paragraph}>Чем больше сообществ в активе, тем больше времени требуется на планирование, ведение и сбор статистики.</p>
+            <h4 className={styles.h4}>Мы подошли к решению этой проблемы технологично - разработали собственный софт, который:</h4>
             <div className={styles.wrapper}>
                 {items.map((items, index) => (
                     <article key={index} className={styles.item}>
@@ -42,7 +42,7 @@ export default function CommunityAutomation(){
             </div>
         <section className={styles.services}>
             <div className="first-block">
-                <h4>Услуги для администраторов</h4>
+                <h4 className={styles.h4}>Услуги для администраторов</h4>
                 <div className={styles["services-wrapper"]}>
                 {servicesItems.map((items, index) => (
                     <article key={index} className={styles["services-item"]}>

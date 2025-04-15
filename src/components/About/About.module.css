@@ -3,6 +3,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 2fr 1fr;
     column-gap: 35px;
+    margin-top: 60px;
 }
 
 .text{
@@ -16,6 +17,7 @@
 
 .button{
     place-self: start;
+    margin-top: 20px;
 }
 
 .image-mob{
@@ -70,6 +72,7 @@
     .wrapper{
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, auto);
+        margin-top: 30px;
     }
 
     .button{

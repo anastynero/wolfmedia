@@ -5,9 +5,9 @@ import Email from '../Email/Email';
 
 export default function Contacts(){
     return(
-        <section className={styles.contacts}>
+        <section className={styles.contacts} id='contacts'>
             <h2>Есть вопрос или предложение?</h2>
-            <h4>Напиши нам!</h4>
+            <h4 className={styles.h4}>Напиши нам!</h4>
             <div className={styles.wrapper}>
                 <article className={styles["first-block"]}>
                     <figure className={styles.item}>
@@ -15,6 +15,8 @@ export default function Contacts(){
                         src={contacts1}
                         alt='Фото из раздела Контакты'
                         className={styles.image}
+                        width={370}
+                        height={370}
                         />
                         <Email/>
                         </figure>
