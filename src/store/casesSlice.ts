@@ -18,18 +18,22 @@ interface CasesState {
   items: CaseItem[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
+  page: number; // текущая страница
+  hasMore: boolean; // есть ли еще данные
 }
 
 const initialState: CasesState = {
   items: [],
   status: 'idle',
   error: null,
+  page: 1,
+  hasMore: true
 };
 
-export const fetchProducts = createAsyncThunk<CaseItem[]>(
+export const fetchProducts = createAsyncThunk<CaseItem[], number>(
   'cases/fetchProducts',
-  async () => {
-    const response = await fetch('https://api.cms.chulakov.dev/page/work');
+  async (page = 1) => {
+    const response = await fetch(`https://api.cms.chulakov.dev/page/work?page=${page}&limit=10`);
     const data = await response.json();
     return data.items;
   }
@@ -46,7 +50,9 @@ const casesSlice = createSlice({
       })
       .addCase(fetchProducts.fulfilled, (state, action: PayloadAction<CaseItem[]>) => {
         state.status = 'succeeded';
-        state.items = action.payload;
+        state.items = [...state.items, ...action.payload];
+        state.page += 1;
+        state.hasMore = action.payload.length === 10;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.status = 'failed';

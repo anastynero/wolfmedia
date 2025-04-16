@@ -23,19 +23,42 @@
     transition: outline-color 0.5s ease-in-out;
 }
 
-
-.button{
-    margin-block-start: 30px;
-}
-
 .h2{
     margin-block-start: 180px;
 }
 
 .tags{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin-block-start: 10px;
+}
+
+.tag{
+    padding: 5px;
+    outline: 1px solid var(--primary-text-color);
+    border-radius: 5px;
+}
+
+.button{
+    padding: 12px 42px;
+    color: var(--primary-text-color);
+    background-color: var(--accent-text-color);
+    border: none;
+    font-size: var(--paragraph-font-size);
+    font-family: var(--font-family);
+    font-weight: 600;
+    cursor: pointer;
+    margin-block-start: 30px;
+}
+
+.button:hover{
+    background-color: #FF852D;
+    transition: 0.3s ease;
+}
+
+.button:active{
+    background-color: #E3432D;
 }
 
 @media (max-width: 900px){

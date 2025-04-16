@@ -12,7 +12,7 @@ import { CaseItem } from '@/store/casesSlice';
 
 export default function Cases() {
     const dispatch = useAppDispatch()
-    const { items, status, error } = useSelector((state: RootState) => state.cases)
+    const { items, status, error, page, hasMore } = useSelector((state: RootState) => state.cases)
 
     const parseTags = (tagsString: string) => {
         if (!tagsString) return []
@@ -21,15 +21,21 @@ export default function Cases() {
 
     useEffect(() => {
         if (status === 'idle') {
-            dispatch(fetchProducts())
+            dispatch(fetchProducts(1))
         }
     }, [dispatch, status])
+
+    const loadMore = () => {
+        if(hasMore){
+            dispatch(fetchProducts(page));
+        }
+    }
 
     return (
         <section className="cases">
             <h2 className={styles.h2}>НАШИ РАБОТЫ</h2>
 
-            {status === 'loading' && <p>Загрузка...</p>}
+            {status === 'loading' && page === 1 && <p>Загрузка...</p>}
             {status === 'failed' && <p>Ошибка: {error}</p>}
 
             <section className={styles["cases-items"]}>
@@ -49,7 +55,7 @@ export default function Cases() {
                             {tagsArray.length > 0 && (
                                 <ul className={styles.tags}>
                                     {tagsArray.map((tag, index) => (
-                                        <li key={index}>{tag}</li>
+                                        <li key={index} className={styles.tag}>{tag}</li>
                                     ))}
                                 </ul>
                             )}
@@ -57,7 +63,7 @@ export default function Cases() {
                     )
                 })}
             </section>
-            <Button className={styles.button}>ЗАГРУЗИТЬ ЕЩЕ</Button>
+            {hasMore && <button className={styles.button} onClick={loadMore}>ЗАГРУЗИТЬ ЕЩЕ</button>}
         </section>
     )
 }
