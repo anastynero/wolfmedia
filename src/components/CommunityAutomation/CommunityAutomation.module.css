@@ -5,13 +5,13 @@
 }
 
 .h4{
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-block-start: 40px;
+    margin-block-end: 40px;
 }
 
 .paragraph{
-    margin-top: 60px;
-    margin-bottom: 40px;
+    margin-block-start: 60px;
+    margin-block-end: 40px;
 }
 
 .item {
@@ -24,7 +24,7 @@
 .text {
     background-color: #503655;
     flex-grow: 1;        
-    margin-bottom: 0;
+    margin-block-end: 0;
     padding: 18px;
 }
 
@@ -65,7 +65,7 @@
 }
 
 .button{
-    margin-top: 40px;
+    margin-block-start: 40px;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
@@ -101,8 +101,8 @@
     }
 
     .paragraph{
-        margin-bottom: 30px;
-        margin-top: 30px;
+        margin-block-end: 30px;
+        margin-block-start: 30px;
     }
 
     .services-wrapper{
@@ -172,7 +172,7 @@
     }
 
     .text {       
-        margin-top: 0;
+        margin-block-start: 0;
         padding: 10px;
     }
 
@@ -192,7 +192,7 @@
     }
 
     .h4{
-        margin-top: 30px;
-        margin-bottom: 30px;
+        margin-block-start: 30px;
+        margin-block-end: 30px;
     }
 }

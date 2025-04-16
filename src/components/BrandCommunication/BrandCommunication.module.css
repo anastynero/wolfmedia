@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 30px;
-    margin-top: var(--medium-margin);
+    margin-block-start: var(--medium-margin);
 }
 
 .item{
@@ -26,13 +26,13 @@
 }
 
 .paragraph{
-    margin-top: var(--medium-margin);
+    margin-block-start: var(--medium-margin);
 }
 
 .button{
-    margin-top: var(--medium-margin);
-    margin-right: auto;
-    margin-left: auto;
+    margin-block-start: var(--medium-margin);
+    margin-inline-end: auto;
+    margin-inline-start: auto;
     display: block;
 }
 
@@ -42,7 +42,7 @@
     }
     .wrapper{
         column-gap: 22px;
-        margin-top: var(--small-margin);
+        margin-block-start: var(--small-margin);
     }
 }
 
@@ -58,7 +58,7 @@
         height: 63px;
     }
     .h2{
-        margin-top: 80px;
+        margin-block-start: 80px;
     }
 }
 
@@ -67,7 +67,7 @@
         grid-template-rows: repeat(3, 1fr);
         grid-template-columns: 1fr;
         row-gap: 15px;
-        margin-top: 30px;
+        margin-block-start: 30px;
     }
     .item{
         flex-direction: row;
@@ -84,13 +84,13 @@
         padding: 12px;
     }
     .paragraph{
-        margin-top: 30px;
+        margin-block-start: 30px;
     }
     .button{
-        margin-top: 30px;
+        margin-block-start: 30px;
         width: 100%;
     }
     .h2{
-        margin-top: 80px;
+        margin-block-start: 80px;
     }
 }

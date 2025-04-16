@@ -11,7 +11,7 @@
     background-color: #3B2341;
     width: 100%;
     padding: 30px;
-    margin-top: var(--large-margin);
+    margin-block-start: var(--large-margin);
     bottom: 0;
 }
 
@@ -110,6 +110,6 @@
     }
 
     .contacts{
-        margin-bottom: 15px;
+        margin-block-end: 15px;
     }
 }

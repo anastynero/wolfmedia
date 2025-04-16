@@ -3,12 +3,12 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap: 30px;
-    margin-top: 60px;
+    margin-block-start: 60px;
 }
 
 .image{
     object-fit: cover;
-    margin-top: 30px;
+    margin-block-start: 30px;
 }
 
 .item{
@@ -25,11 +25,17 @@
 
 
 .button{
-    margin-top: 30px;
+    margin-block-start: 30px;
 }
 
 .h2{
-    margin-top: 180px;
+    margin-block-start: 180px;
+}
+
+.tags{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
 }
 
 @media (max-width: 900px){
@@ -39,7 +45,7 @@
     }
 
     .h2{
-        margin-top: 150px;
+        margin-block-start: 150px;
     }
 }
 
@@ -61,7 +67,7 @@
     }
 
     .h2{
-        margin-top: 100px;
+        margin-block-start: 100px;
     }
 
     .h5{
@@ -71,6 +77,6 @@
     .cases-items{
         gap: 20px;
         grid-template-columns: 1fr;
-        margin-top: 30px;
+        margin-block-start: 30px;
     }
 }

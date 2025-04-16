@@ -10,7 +10,7 @@ export interface CaseItem {
       mobile?: string;
     };
   };
-  tagsDisplayed?: string; 
+  tagsDisplayed: string; 
   slug: string;
 }
 

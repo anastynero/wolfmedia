@@ -1,12 +1,12 @@
 .image{
     outline: 2px solid var(--accent-text-color);
     object-fit: cover;
-    margin-bottom: 20px;
+    margin-block-end: 20px;
 }
 
 .h4{
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-block-start: 40px;
+    margin-block-end: 40px;
 }
 
 .first-block{
@@ -27,11 +27,11 @@
 
 .text{
     color: var(--small-text-color);
-    margin-top: 10px;
+    margin-block-start: 10px;
 }
 
 .contacts-block{
-    margin-bottom: 40px;
+    margin-block-end: 40px;
 }
 
 @media (max-width: 900px) {
@@ -45,8 +45,8 @@
     }
 
     .h4{
-        margin-top: 30px;
-        margin-bottom: 30px;
+        margin-block-start: 30px;
+        margin-block-end: 30px;
     }
 
     .first-block{
