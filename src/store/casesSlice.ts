@@ -12,6 +12,13 @@ export interface CaseItem {
   };
   tagsDisplayed: string; 
   slug: string;
+  banner: {
+    video: {
+      desktop: string;
+      tablet?: string;
+      mobile?: string;
+    }
+  }
 }
 
 interface CasesState {
@@ -20,10 +27,12 @@ interface CasesState {
   error: string | null;
   offset: number; 
   hasMore: boolean; // есть ли еще данные
+  currentCase: null
 }
 
 const initialState: CasesState = {
   items: [],
+  currentCase: null,
   status: 'idle',
   error: null,
   offset: 0,
@@ -36,6 +45,14 @@ export const fetchProducts = createAsyncThunk<CaseItem[], number>(
     const response = await fetch(`https://api.cms.chulakov.dev/page/work?limit=10&offset=${offset}`);
     const data = await response.json();
     return data.items;
+  }
+);
+
+export const fetchCaseBySlug = createAsyncThunk(
+  'cases/fetchCaseBySlug',
+  async (slug: string) => {
+    const response = await fetch(`https://api.cms.chulakov.dev/page/work/${slug}`);
+    return response.json();
   }
 );
 
@@ -75,7 +92,10 @@ const casesSlice = createSlice({
       .addCase(fetchProducts.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message || 'Что-то пошло не так';
-      });
+      })
+      .addCase(fetchCaseBySlug.fulfilled, (state, action) => {
+        state.currentCase = action.payload;
+      })
   },
 });
 

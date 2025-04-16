@@ -7,6 +7,7 @@ import { useAppDispatch, RootState } from '@/store';
 import { fetchProducts } from '@/store/casesSlice';
 import { htmlToText } from 'html-to-text';
 import { CaseItem } from '@/store/casesSlice';
+import Link from 'next/link';
 
 
 export default function Cases({ initialData }: { initialData?: CaseItem[] }) {
@@ -46,7 +47,8 @@ export default function Cases({ initialData }: { initialData?: CaseItem[] }) {
                     const tagsArray = parseTags(item.tagsDisplayed) 
                     
                     return (
-                        <article key={item.slug} className={styles.item}>
+                        <Link href={`/cases/${item.slug}`} key={item.slug}>
+                        <article className={styles.item}>
                             <h5 className={styles.h5}>{htmlToText(item.title)}</h5>
                             <img
                                 src={item.poster.image.src}
@@ -63,6 +65,7 @@ export default function Cases({ initialData }: { initialData?: CaseItem[] }) {
                                 </ul>
                             )}
                         </article>
+                        </Link>
                     )
                 })}
             </section>
