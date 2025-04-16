@@ -7,3 +7,18 @@
     opacity: 0.5;
 }
 
+.vk:hover{
+    filter: invert(48%) sepia(89%) saturate(1818%) hue-rotate(186deg) brightness(98%) contrast(101%);
+}
+
+.ok:hover{
+    filter: invert(50%) sepia(98%) saturate(1000%) hue-rotate(330deg) brightness(102%) contrast(101%);
+}
+
+.fb:hover{
+    filter: invert(37%) sepia(48%) saturate(728%) hue-rotate(189deg) brightness(91%) contrast(89%);
+}
+
+.twi:hover{
+    filter: invert(55%) sepia(99%) saturate(748%) hue-rotate(171deg) brightness(96%) contrast(93%);
+}

@@ -12,7 +12,7 @@ import { CaseItem } from '@/store/casesSlice';
 
 export default function Cases() {
     const dispatch = useAppDispatch()
-    const { items, status, error, page, hasMore } = useSelector((state: RootState) => state.cases)
+    const { items, status, error, offset, hasMore } = useSelector((state: RootState) => state.cases)
 
     const parseTags = (tagsString: string) => {
         if (!tagsString) return []
@@ -27,7 +27,7 @@ export default function Cases() {
 
     const loadMore = () => {
         if(hasMore){
-            dispatch(fetchProducts(page));
+            dispatch(fetchProducts(offset));
         }
     }
 
@@ -35,7 +35,7 @@ export default function Cases() {
         <section className="cases">
             <h2 className={styles.h2}>НАШИ РАБОТЫ</h2>
 
-            {status === 'loading' && page === 1 && <p>Загрузка...</p>}
+            {status === 'loading' && <p>Загрузка...</p>}
             {status === 'failed' && <p>Ошибка: {error}</p>}
 
             <section className={styles["cases-items"]}>

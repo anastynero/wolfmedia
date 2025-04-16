@@ -5,10 +5,10 @@ import {vk, ok, facebook, twitter} from './../../images';
 
 export default function SocialMedia(){
     const icons = [
-        {title: "Вконтакте", src: vk, href: "/"},
-        {title: "Одноклассники", src: ok, href: "/"},
-        {title: "Фейсбук", src: facebook, href: "/"},
-        {title: "Твиттер", src: twitter, href: "/"}
+        {title: "Вконтакте", src: vk, href: "/", name: "vk"},
+        {title: "Одноклассники", src: ok, href: "/", name: "ok"},
+        {title: "Фейсбук", src: facebook, href: "/", name: "fb"},
+        {title: "Твиттер", src: twitter, href: "/", name: "twi"}
     ]
     return(
         <div className={styles["social-media"]}>
@@ -19,7 +19,7 @@ export default function SocialMedia(){
                     alt={item.title}
                     width={24}
                     height={24}
-                    className={styles.image}
+                    className={styles[item.name]}
                     />
                 </Link>
             ))}
