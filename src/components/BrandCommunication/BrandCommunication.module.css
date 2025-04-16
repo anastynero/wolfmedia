@@ -30,7 +30,7 @@
 }
 
 .button{
-    margin-block-start: var(--medium-margin);
+    margin-block-start: 100px;
     margin-inline-end: auto;
     margin-inline-start: auto;
     display: block;

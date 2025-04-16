@@ -103,24 +103,29 @@ h1{
     font-size: var(--h1-font-size);
     margin-top: var(--large-margin);
     margin-bottom: var(--large-margin);;
+    line-height: 100%;
 }
 
 h2{
     font-size: var(--h1-font-size);
     margin-top: var(--large-margin);
     font-weight: 900;
+    line-height: 100%;
 }
 
 h3{
     font-size: var(--h3-font-size);
+    line-height: 100%;
 }
 
 h4{
     font-size: var(--h4-font-size);
+    line-height: 100%;
 }
 
 h5{
     font-size: var(--h5-font-size);
+    line-height: 100%;
 }
 
 .container{

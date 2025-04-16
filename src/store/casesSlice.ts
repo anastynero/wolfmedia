@@ -42,7 +42,22 @@ export const fetchProducts = createAsyncThunk<CaseItem[], number>(
 const casesSlice = createSlice({
   name: 'cases',
   initialState,
-  reducers: {},
+  reducers: {
+    initialize: (state, action: PayloadAction<CaseItem[]>) => {
+      state.items = action.payload;
+      state.status = 'succeeded';
+      state.offset = action.payload.length;
+      state.hasMore = action.payload.length >= 10;
+    },
+    resetCases: (state) => {
+      // сброс состояния при переходе между страницами
+      state.items = [];
+      state.offset = 0;
+      state.hasMore = true;
+      state.status = 'idle';
+      state.error = null;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
@@ -50,8 +65,11 @@ const casesSlice = createSlice({
       })
       .addCase(fetchProducts.fulfilled, (state, action: PayloadAction<CaseItem[]>) => {
         state.status = 'succeeded';
-        state.items = [...state.items, ...action.payload];
-        state.offset += 11;
+        const newItems = action.payload.filter(
+          item => !state.items.some(existing => existing.slug === item.slug)
+        );
+        state.items = [...state.items, ...newItems];
+        state.offset = state.items.length; // обновляем offset до текущего количества
         state.hasMore = action.payload.length === 10;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
@@ -62,3 +80,5 @@ const casesSlice = createSlice({
 });
 
 export default casesSlice.reducer;
+
+export const { initialize, resetCases } = casesSlice.actions;

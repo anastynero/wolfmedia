@@ -3,7 +3,6 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import './global.css';
 import { Providers } from './providers';
-import {store} from './../store/index'
 
 export const metadata: Metadata = {
   title: "Wolfmedia",

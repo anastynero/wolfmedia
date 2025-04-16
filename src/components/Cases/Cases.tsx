@@ -1,6 +1,5 @@
 "use client"
 
-import Button from '../Button/Button'
 import styles from './Cases.module.css'
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
@@ -10,7 +9,7 @@ import { htmlToText } from 'html-to-text';
 import { CaseItem } from '@/store/casesSlice';
 
 
-export default function Cases() {
+export default function Cases({ initialData }: { initialData?: CaseItem[] }) {
     const dispatch = useAppDispatch()
     const { items, status, error, offset, hasMore } = useSelector((state: RootState) => state.cases)
 
@@ -20,10 +19,14 @@ export default function Cases() {
     }
 
     useEffect(() => {
+        if (initialData && items.length === 0) {
+            dispatch({ type: 'cases/initialize', payload: initialData });
+          }
+
         if (status === 'idle') {
-            dispatch(fetchProducts(1))
+            dispatch(fetchProducts(0))
         }
-    }, [dispatch, status])
+    }, [dispatch, initialData])
 
     const loadMore = () => {
         if(hasMore){

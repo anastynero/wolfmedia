@@ -38,6 +38,7 @@
     z-index: 2;
     padding: 15px 15px;
     gap: 35px;
+    top: 100%;
     visibility: hidden;
     list-style: none;
     box-sizing: border-box;

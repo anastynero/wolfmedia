@@ -1,12 +1,12 @@
 import styles from './Contacts.module.css';
-import {contacts1, contacts2, back} from '@/images';
+import {contacts1, contacts2} from '@/images';
 import Image from 'next/image';
 import Email from '../Email/Email';
 
 export default function Contacts(){
     return(
         <section className={styles.contacts} id='contacts'>
-            <h2>Есть вопрос или предложение?</h2>
+            <h2>ЕСТЬ ВОПРОС ИЛИ ПРЕДЛОЖЕНИЕ?</h2>
             <h4 className={styles.h4}>Напиши нам!</h4>
             <div className={styles.wrapper}>
                 <article className={styles["first-block"]}>

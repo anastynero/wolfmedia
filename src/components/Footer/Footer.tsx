@@ -3,7 +3,6 @@ import Image from 'next/image';
 import styles from './Footer.module.css'
 import SocialMedia from '../SocialMedia/SocialMedia';
 import {logomini, telephone, footerlogo} from './../../images';
-import clsx from 'clsx';
 
 export default function Footer(){
     return(

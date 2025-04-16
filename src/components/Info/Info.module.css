@@ -49,6 +49,12 @@
     font-size: var(--h5-font-size);
 }
 
+.items{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 @media (max-width: 900px){
     .wrapper{
         grid-template-rows: 1fr 2fr;

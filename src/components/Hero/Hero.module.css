@@ -1,5 +1,5 @@
 .hero{
-    padding-top: 65px;
+    padding-top: 85px;
 }
 
 .h1{
@@ -29,6 +29,7 @@
 
 .text{
     font-weight: 700;
+    margin-top: 15px;
 }
 
 .vector{
