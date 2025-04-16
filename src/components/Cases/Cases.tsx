@@ -55,7 +55,7 @@ export default function Cases() {
                             {tagsArray.length > 0 && (
                                 <ul className={styles.tags}>
                                     {tagsArray.map((tag, index) => (
-                                        <li key={index} className={styles.tag}>{tag}</li>
+                                        <li key={index} className={styles.tag}>{htmlToText(tag)}</li>
                                     ))}
                                 </ul>
                             )}

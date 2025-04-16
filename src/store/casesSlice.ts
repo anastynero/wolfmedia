@@ -51,7 +51,7 @@ const casesSlice = createSlice({
       .addCase(fetchProducts.fulfilled, (state, action: PayloadAction<CaseItem[]>) => {
         state.status = 'succeeded';
         state.items = [...state.items, ...action.payload];
-        state.offset += 10;
+        state.offset += 11;
         state.hasMore = action.payload.length === 10;
       })
       .addCase(fetchProducts.rejected, (state, action) => {

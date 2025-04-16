@@ -147,6 +147,16 @@
     transform: rotate(-45deg);
   }
 
+@media (max-width: 1300px) {
+    .text, .social-media{
+        display: none;
+    }
+
+    .icon{
+        display: block;
+    }
+}
+
 @media (max-width: 900px){
     .logo{
         width: 165px;
@@ -167,14 +177,6 @@
 
     .header{
         padding: 15px 20px;
-    }
-
-    .text, .social-media{
-        display: none;
-    }
-
-    .icon{
-        display: block;
     }
 }
 
