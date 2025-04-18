@@ -61,8 +61,8 @@
     }
 
     .image{
-        width: 270px;
-        height: 270px;
+        width: 250px;
+        height: 250px;
     }
 }
 
@@ -70,6 +70,7 @@
     .first-block{
         flex-direction: column;
         gap: 15px;
+        width: 100%;
     }
 
     .item{

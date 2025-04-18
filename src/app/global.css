@@ -92,6 +92,7 @@ body{
     background-color: var(--bg-color);
     color: var(--primary-text-color);
     font-family: var(--font-family);
+    overflow-x: hidden;
 }
 
 a{
