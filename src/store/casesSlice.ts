@@ -23,17 +23,17 @@ export interface CaseItem {
         tablet?: string;
         mobile?: string;
       };
+    };
   };
-}
 }
 
 interface CasesState {
   items: CaseItem[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
-  offset: number; 
-  hasMore: boolean; // есть ли еще данные
-  currentCase: null
+  offset: number;
+  hasMore: boolean;
+  currentCase: CaseItem | null;
 }
 
 const initialState: CasesState = {
@@ -54,10 +54,13 @@ export const fetchProducts = createAsyncThunk<CaseItem[], number>(
   }
 );
 
-export const fetchCaseBySlug = createAsyncThunk(
+export const fetchCaseBySlug = createAsyncThunk<CaseItem, string>(
   'cases/fetchCaseBySlug',
   async (slug: string) => {
     const response = await fetch(`https://api.cms.chulakov.dev/page/work/${slug}`);
+    if (!response.ok) {
+      throw new Error('Кейс не найден');
+    }
     return response.json();
   }
 );
@@ -73,7 +76,6 @@ const casesSlice = createSlice({
       state.hasMore = action.payload.length >= 10;
     },
     resetCases: (state) => {
-      // сброс состояния при переходе между страницами
       state.items = [];
       state.offset = 0;
       state.hasMore = true;
@@ -92,19 +94,26 @@ const casesSlice = createSlice({
           item => !state.items.some(existing => existing.slug === item.slug)
         );
         state.items = [...state.items, ...newItems];
-        state.offset = state.items.length; // обновляем offset до текущего количества
+        state.offset = state.items.length;
         state.hasMore = action.payload.length === 10;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message || 'Что-то пошло не так';
       })
-      .addCase(fetchCaseBySlug.fulfilled, (state, action) => {
+      .addCase(fetchCaseBySlug.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchCaseBySlug.fulfilled, (state, action: PayloadAction<CaseItem>) => {
+        state.status = 'succeeded';
         state.currentCase = action.payload;
       })
+      .addCase(fetchCaseBySlug.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message || 'Failed to fetch case';
+      });
   },
 });
 
 export default casesSlice.reducer;
-
 export const { initialize, resetCases } = casesSlice.actions;

@@ -6,7 +6,7 @@ import CaseDetails from '@/components/CaseDetails/CaseDetails';
 export const revalidate = 60;
 
 export async function generateStaticParams() {
-    const response = await fetch('https://api.cms.chulakov.dev/page/work?limit=40');
+    const response = await fetch('https://api.cms.chulakov.dev/page/work?limit=37');
     const cases = await response.json();
     
     return cases.items.map((caseItem: CaseItem) => ({
@@ -14,11 +14,19 @@ export async function generateStaticParams() {
     }));
   }
 
-  export default async function CasePage({ params }: { params: { slug: string } }) {
-    await store.dispatch(fetchCaseBySlug(params.slug));
-    const caseData = store.getState().cases.currentCase;
+  interface PageProps {
+    params: {
+      slug: string
+    }
+  }
+
+  export default async function CasePage({ params }: PageProps) {
+    const response = await fetch(`https://api.cms.chulakov.dev/page/work/${params.slug}`)
+    const caseData = await response.json() as CaseItem
+    
+    if (!caseData) {
+      return <h2>Кейс не найден</h2>
+    }
   
-    if (!caseData) return notFound();
-  
-    return <CaseDetails data={caseData} />;
-  } 
+    return <CaseDetails data={caseData} />
+  }
