@@ -1,30 +1,15 @@
-import { CaseItem } from '@/store/casesSlice';
+import { notFound } from 'next/navigation';
 import CaseDetails from '@/components/CaseDetails/CaseDetails';
 
 export const revalidate = 60;
 
-export async function generateStaticParams() {
-    const response = await fetch('https://api.cms.chulakov.dev/page/work?limit=37');
-    const cases = await response.json();
+export default async function CasePage({params}: {params: Promise<{ slug: string }>}){
+    const { slug } = await params;
+    const response = await fetch(`https://api.cms.chulakov.dev/page/work/${slug}`);
     
-    return cases.items.map((caseItem: CaseItem) => ({
-      slug: caseItem.slug 
-    }));
-  }
-
-  interface PageProps {
-    params: {
-      slug: string
-    }
-  }
-
-  export default async function CasePage({ params }: PageProps) {
-    const response = await fetch(`https://api.cms.chulakov.dev/page/work/${params.slug}`)
-    const caseData = await response.json() as CaseItem
+    const caseData = await response.json();
     
-    if (!caseData) {
-      return <h2>Кейс не найден</h2>
-    }
-  
-    return <CaseDetails data={caseData} />
-  }
+    if (!caseData) notFound();
+
+    return <CaseDetails data={caseData} />;
+}
