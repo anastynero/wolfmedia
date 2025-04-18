@@ -154,6 +154,10 @@
     .services-wrapper{
         gap: 20px;
     }
+
+    .h2{
+        margin-block-start: 80px;
+    }
     
 }
 

@@ -60,6 +60,9 @@
     .h2{
         margin-block-start: 80px;
     }
+    .button{
+        margin-block-start: 60px;
+    }
 }
 
 @media (max-width: 320px){
