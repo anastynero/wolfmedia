@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import './global.css';
@@ -15,8 +14,9 @@ export default function RootLayout({
       <head>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
       <meta property="og:title" content="Wolfmedia"/>
-      <meta property="og:description" content="«Wolfmedia» – это редакция, где ежедневно авторы, иллюстраторы, дизайнеры, видеографы, создают уникальный контент и доносят его до огромной аудитории с помощью социальных сетей."/>
-      <meta property="og:image" content="https://wolfmedia-three.vercel.app/public/img/logo_light.svg"/>
+      <meta property="og:description" content="«Wolfmedia» – это редакция, где ежедневно 
+      авторы, иллюстраторы, дизайнеры, видеографы, создают уникальный контент и доносят его 
+      до огромной аудитории с помощью социальных сетей."/>
       <meta property="og:locale" content="ru_RU"/>
       <meta property="og:type" content="website"/>
       <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
