@@ -200,7 +200,7 @@
     }
 }
 
-@media (max-width: 320px){
+@media (max-width: 400px){
     .logo{
         display: block;
         width: 144px;

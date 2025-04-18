@@ -11,7 +11,7 @@
 }
 
 .image{
-    padding: 38px 135px;
+    padding: 30px 130px;
     background-color: #3B2341;
 }
 
@@ -38,7 +38,7 @@
 
 @media (max-width: 900px){
     .image{
-        padding: 30px 86px;
+        padding: 30px 80px;
     }
     .wrapper{
         column-gap: 22px;
@@ -51,7 +51,7 @@
         column-gap: 20px;
     }
     .image{
-        padding: 20px 55px;
+        padding: 20px 50px;
     }
     .icon{
         width: 63px;
@@ -63,9 +63,13 @@
     .button{
         margin-block-start: 60px;
     }
+
+    .text{
+        font-size: 16px;
+    }
 }
 
-@media (max-width: 320px){
+@media (max-width: 400px){
     .wrapper{
         grid-template-rows: repeat(3, 1fr);
         grid-template-columns: 1fr;
@@ -80,7 +84,7 @@
         height: 48px;
     }
     .image{
-        padding: 12px;
+        padding: 10px;
     }
     .text{
         text-align: left;

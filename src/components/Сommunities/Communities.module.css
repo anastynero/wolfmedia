@@ -116,7 +116,7 @@
     }
 }
 
-@media (max-width: 320px){
+@media (max-width: 400px){
     .wrapper{
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;

@@ -45,7 +45,7 @@
     }
 }
 
-@media (max-width: 320px){
+@media (max-width: 400px){
     .navigation{
         flex-direction: column;
     }

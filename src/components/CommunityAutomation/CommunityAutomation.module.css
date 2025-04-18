@@ -161,7 +161,7 @@
     
 }
 
-@media (max-width: 320px){
+@media (max-width: 400px){
     .wrapper{
         display: flex;
         flex-direction: column;
