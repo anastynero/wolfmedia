@@ -9,12 +9,12 @@ export default function CaseDetails({ data }: { data: CaseItem }){
         <article className="case">
             <h1>{htmlToText(data.title)}</h1>
 
-            {data.poster?.image?.src && (
-  <img 
-    src={data.poster.image.src}
-    alt={data.title || 'Case image'}
-  />
-)}
+            {data.banner?.poster?.image?.src && (
+            <img 
+              src={data.poster.image.src}
+              alt={data.title || 'Case image'}
+            />
+            )}
         </article>
     )
 }

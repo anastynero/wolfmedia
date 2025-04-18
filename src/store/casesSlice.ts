@@ -13,12 +13,18 @@ export interface CaseItem {
   tagsDisplayed: string; 
   slug: string;
   banner: {
-    video: {
-      desktop: string;
-      tablet?: string;
-      mobile?: string;
-    }
-  }
+    options?: {
+      menuColor: string;
+    };
+    poster: {
+      image: {
+        src: string;
+        src2x?: string;
+        tablet?: string;
+        mobile?: string;
+      };
+  };
+}
 }
 
 interface CasesState {

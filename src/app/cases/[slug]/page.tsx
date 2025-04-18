@@ -10,16 +10,15 @@ export async function generateStaticParams() {
     const cases = await response.json();
     
     return cases.items.map((caseItem: CaseItem) => ({
-      slug: caseItem.slug // Генерируем пути: /cases/project-1, /cases/project-2
+      slug: caseItem.slug 
     }));
   }
 
   export default async function CasePage({ params }: { params: { slug: string } }) {
-    // Загружаем данные на сервере
     await store.dispatch(fetchCaseBySlug(params.slug));
     const caseData = store.getState().cases.currentCase;
   
     if (!caseData) return notFound();
   
     return <CaseDetails data={caseData} />;
-  }
+  } 
