@@ -1,6 +1,4 @@
-import { notFound } from 'next/navigation';
-import { store } from '@/store';
-import { CaseItem, fetchCaseBySlug } from '@/store/casesSlice';
+import { CaseItem } from '@/store/casesSlice';
 import CaseDetails from '@/components/CaseDetails/CaseDetails';
 
 export const revalidate = 60;

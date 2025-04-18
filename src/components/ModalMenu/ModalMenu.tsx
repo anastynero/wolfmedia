@@ -3,7 +3,7 @@ import styles from './ModalMenu.module.css'
 import Image from 'next/image';
 import telephone from "./../../../public/img/telephone.svg"
 
-export default function ModalMenu({isOpen, onClose}: {isOpen : boolean, onClose: () => void}){
+export default function ModalMenu({isOpen}: {isOpen : boolean, onClose: () => void}){
     return(
         <section className={`${styles["modal-menu"]} ${isOpen ? styles.open : ""}`}>
             <div className={styles.wrapper}>
