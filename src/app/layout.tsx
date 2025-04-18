@@ -17,6 +17,7 @@ export default function RootLayout({
         <meta property="og:description" content="«Wolfmedia» – это редакция, где ежедневно 
         авторы, иллюстраторы, дизайнеры, видеографы, создают уникальный контент и доносят его 
         до огромной аудитории с помощью социальных сетей."/>
+        <meta property="og:image" content="/og-image.png" />
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="shortcut icon" href="/favicon.ico" />
