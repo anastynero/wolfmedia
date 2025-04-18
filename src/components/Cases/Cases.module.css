@@ -81,7 +81,7 @@
     }
 }
 
-@media (max-width: 600px){
+@media (max-width: 400px){
     .image{
         width: 100%;
         height: 200px;
@@ -101,7 +101,7 @@
 
     .cases-items{
         gap: 20px;
-        grid-template-columns: 1fr;
+        grid-template-columns: 350px;
         margin-block-start: 30px;
     }
 }
