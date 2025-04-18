@@ -14,7 +14,7 @@
     text-underline-offset: 4px;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 400px) {
     .email-text{
         font-size: 13px;
     }

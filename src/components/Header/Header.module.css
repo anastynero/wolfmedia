@@ -218,5 +218,9 @@
     .navigation{
         display: none;
     }
+
+    .left-block{
+        justify-content: space-between;
+    }
 }
 
