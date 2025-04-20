@@ -47,6 +47,17 @@
     --gap: 30px;
 }
 
+.container{
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+@media (max-width: 1280px){
+    .container{
+        max-width: 900px;
+    }
+}
+
 @media (max-width: 900px){
     :root{
         --container-width: 860px;
@@ -58,7 +69,7 @@
     }
 
     .container{
-        padding: 0 20px;
+        max-width: var(--container-width);
     }
 }
 
@@ -84,11 +95,6 @@
         --h5-font-size: 14px;
         --large-margin: 80px;
     }
-
-    .container{
-        padding: 0 10px;
-    }
-
 }
 
 * {
@@ -97,11 +103,16 @@
     margin: 0;
   }
 
+html, body{
+    width: 100%;
+    min-width: 100vw;
+    overflow-x: hidden;
+}
+
 body{
     background-color: var(--bg-color);
     color: var(--primary-text-color);
     font-family: var(--font-family);
-    overflow-x: hidden;
 }
 
 a{
@@ -136,11 +147,6 @@ h4{
 h5{
     font-size: var(--h5-font-size);
     line-height: 100%;
-}
-
-.container{
-    width: var(--container-width);
-    margin: 0 auto;
 }
 
 figure{

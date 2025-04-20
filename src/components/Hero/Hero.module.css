@@ -45,6 +45,12 @@
     overflow: visible;
 }
 
+@media (max-width: 1280px) {
+    .h1{
+        font-size: 100px;
+    }
+}
+
 @media (max-width: 900px){
     .h1{
         font-size: 86px;

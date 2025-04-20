@@ -8,7 +8,7 @@ export default function Footer(){
     return(
         <footer className={styles.footer}>
             <div className={styles.container}>
-            <section className="left-block">
+            <section className={styles["left-block"]}>
             <Link href="/">
                 <Image
                 src={logomini}

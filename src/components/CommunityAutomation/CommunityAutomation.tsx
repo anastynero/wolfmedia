@@ -2,6 +2,7 @@ import styles from './CommunityAutomation.module.css'
 import {hearts, virus, chart, stars, chronometr, start, repair, services, youtube} from '@/images'
 import Image from 'next/image';
 import Button from '../Button/Button';
+import { htmlToText } from 'html-to-text';
 
 export default function CommunityAutomation(){
     const items = [
@@ -16,8 +17,8 @@ export default function CommunityAutomation(){
     ];
 
     const servicesItems = [
-        {icon: start, text: 'Контент и развитие'},
-        {icon: repair, text: 'Управление и монетизация'},
+        {icon: start, text: 'Контент и&nbsp;развитие'},
+        {icon: repair, text: 'Управление и&nbsp;монетизация'},
         {icon: chronometr, text: 'Аренда сообществ'}
     ]
     return(
@@ -51,7 +52,7 @@ export default function CommunityAutomation(){
                         alt='Иконка'
                         className={styles["services-icon"]}
                         />
-                    <h5 className={styles["services-text"]}>{items.text}</h5>
+                    <h5 className={styles["services-text"]}>{htmlToText(items.text)}</h5>
                     </article>
                 ))}
                 </div>

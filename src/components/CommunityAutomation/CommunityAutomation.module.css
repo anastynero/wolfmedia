@@ -151,8 +151,13 @@
         height: 28px;
     }
 
+    .services-item{
+        gap: 8px;
+    }
+
     .services-wrapper{
-        gap: 20px;
+        gap: 10px;
+        font-size: 14px;
     }
 
     .h2{

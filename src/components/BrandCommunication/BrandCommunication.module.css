@@ -36,19 +36,28 @@
     display: block;
 }
 
+@media (max-width: 1280px){
+    .image{
+        padding: 30px 80px;
+    }
+
+    .wrapper{
+        column-gap: 20px;
+    }
+}
+
 @media (max-width: 900px){
     .image{
         padding: 30px 80px;
     }
     .wrapper{
-        column-gap: 22px;
         margin-block-start: var(--small-margin);
     }
 }
 
 @media (max-width: 600px){
     .wrapper{
-        column-gap: 20px;
+        column-gap: 15px;
     }
     .image{
         padding: 20px 50px;
