@@ -9,7 +9,7 @@
 .navigation-item {
     position: relative;
     color: var(--small-text-color);
-    padding-bottom: 5px;
+    padding-block-end: 5px;
 }
 
 .navigation-item:hover{

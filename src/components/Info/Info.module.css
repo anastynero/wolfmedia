@@ -5,8 +5,10 @@
     margin-block-start: 30px;
 }
 .item{
-    padding: 12px 25px;
+    padding-block: 12px;
+    padding-inline: 25px;
     border: 2px solid var(--small-text-color);
+    text-align: center;
 }
 
 .item:first-child{

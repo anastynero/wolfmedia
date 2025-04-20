@@ -1,5 +1,6 @@
 .button{
-    padding: 12px 42px;
+    padding-block: 12px;
+    padding-inline: 42px;
     color: var(--primary-text-color);
     background-color: var(--accent-text-color);
     border: none;

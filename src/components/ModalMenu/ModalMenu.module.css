@@ -8,7 +8,8 @@
     background-color: #3B2341;
     z-index: 1000;
     display: none;
-    padding: 30px 15px;
+    padding-block: 30px;
+    padding-inline: 15px;
   }
   
 .modal-menu.open {
@@ -25,7 +26,8 @@
 .button{
     text-transform: uppercase;
     color: var(--primary-text-color);
-    padding: 13px 24px;
+    padding-block: 13px;
+    padding-inline: 24px;
     background-color: inherit;
     outline: 2px solid var(--primary-text-color);
     font-family: var(--font-family);

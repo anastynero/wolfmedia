@@ -13,7 +13,8 @@
 
 .item{
     background-color: #3B2341;
-    padding: 20px;
+    padding-block: 20px;
+    padding-inline: 20px;
     outline: 2px solid transparent;
     cursor: pointer;
 }
@@ -35,7 +36,8 @@
 }
 
 .tag{
-    padding: 5px;
+    padding-block: 5px;
+    padding-inline: 5px;
     outline: 1px solid var(--primary-text-color);
     border-radius: 5px;
     text-transform: lowercase;
@@ -43,7 +45,8 @@
 }
 
 .button{
-    padding: 12px 42px;
+    padding-block: 12px;
+    padding-inline: 42px;
     color: var(--primary-text-color);
     background-color: var(--accent-text-color);
     border: none;
@@ -88,7 +91,8 @@
     }
 
     .item{
-        padding: 10px;
+        padding-block: 10px;
+        padding-inline: 10px;
     }
 
     .h2{

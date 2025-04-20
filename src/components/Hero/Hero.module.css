@@ -1,5 +1,5 @@
 .hero{
-    padding-top: 85px;
+    padding-block-start: 85px;
 }
 
 .h1{
@@ -23,19 +23,19 @@
 .block{
     border: 2px solid #604466;
     text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-block-start: 30px;
+    padding-block-end: 30px;
 }
 
 .text{
     font-weight: 700;
-    margin-top: 15px;
+    margin-block-start: 15px;
 }
 
 .vector{
     display: block;
     margin: 0 auto;
-    margin-top: var(--medium-margin);
+    margin-block-start: var(--medium-margin);
 }
 
 .background{
@@ -57,7 +57,7 @@
     }
 
     .vector{
-        margin-top: var(--gap);
+        margin-block-start: var(--gap);
     }
 
     .wrapper{
@@ -78,7 +78,7 @@
 @media (max-width: 400px){
     .h1{
         font-size: 36px;
-        margin: 80px 0;
+        margin-block: 80px;
     }
 
     .wrapper{
