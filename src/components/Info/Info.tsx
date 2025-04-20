@@ -4,6 +4,7 @@ import styles from "./Info.module.css";
 import Image from 'next/image';
 import {image1, image2, image3, image4} from "./../../images"
 import { useState } from "react";
+import React from "react";
 
 export default function Info(){
     const images = [
@@ -11,27 +12,71 @@ export default function Info(){
         {url: image2, title: "Изображение 2"},
         {url: image3, title: "Изображение 3"},
         {url: image4, title: "Изображение 4"},
-    ]
+    ];
+    const items = [
+        {
+          id: 0,
+          text: [
+            { id: 0, text: <span>50 штатных специалистов</span> },
+            { id: 1, text: " по SMM" },
+          ],
+        },
+        {
+          id: 1,
+          text: [
+            { id: 0, text: "Производят " },
+            { id: 1, text: <span>контент</span> },
+            { id: 2, text: " в соответствии с " },
+            { id: 3, text: <span>редполитикой</span> },
+            { id: 4, text: " по SMM" },
+          ],
+        },
+        {
+          id: 2,
+          text: [
+            { id: 0, text: "Ежедневно выпускают " },
+            { id: 1, text: <span>2000 постов и 162 видео</span> },
+          ],
+        },
+        {
+          id: 3,
+          text: [
+            { id: 0, text: "Все материалы проходят внешнюю " },
+            { id: 1, text: <span>проверку на уникальность</span> },
+          ],
+        },
+        {
+          id: 4,
+          text: [
+            { id: 0, text: "Собственный софт собирает " },
+            { id: 1, text: <span>полную статистику</span> },
+            { id: 2, text: " по активности сооществ и качеству контента" },
+          ],
+        },
+        {
+          id: 5,
+          text: [
+            { id: 0, text: "Арт-директор следит за соблюдением " },
+            { id: 1, text: <span>стилистики группы</span> },
+          ],
+        },
+      ];
     const [activeImage, setActiveImage] = useState(images[0]);
     return(
         <section className={styles.info}>
             <h2 className={styles.h2}>КАК МЫ РАБОТАЕМ</h2>
             <div className={styles.wrapper}>
-                <article className={styles.items}>
-                    <p className={styles.item}><span className={styles.span}>50 штатных 
-                    специалистов </span>по SMM</p>
-                    <p className={styles.item}>Производят <span className={styles.span}>контент</span> в
-                    соответствии с <span className={styles.span}>редполитикой</span></p>
-                    <p className={styles.item}>Ежедневно выпускают <span className={styles.span}>2000
-                    постов и 162 видео</span></p>
-                    <p className={styles.item}>Все материалы проходят внешнюю 
-                    <span className={styles.span}> проверку на уникальность</span></p>
-                    <p className={styles.item}>Собственный софт собирает
-                        <span className={styles.span}> полную статистику</span> по активности
-                        сооществ и качеству контента</p>
-                    <p className={styles.item}>Арт-директор следит за
-                    соблюдением <span className={styles.span}>стилистики группы</span></p>
-                </article>
+            <ul className={styles.items}>
+                {items.map((item) => (
+              <li className={styles.item} key={item.id}>
+                <p key={"item-p" + item.id}>{item.text.map(textItem => (
+                  <React.Fragment key={`p-inner-list-${item.id}-${textItem.id}`}>
+                    {textItem.text}
+                  </React.Fragment>
+                ))}</p>
+              </li>
+            ))}
+          </ul>
                 <article className={styles.gallery}>
                     <div className={styles.activeImage}>
                     <Image
