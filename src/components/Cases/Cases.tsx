@@ -8,11 +8,16 @@ import { fetchProducts } from '@/store/casesSlice';
 import { htmlToText } from 'html-to-text';
 import { CaseItem } from '@/store/casesSlice';
 import Link from 'next/link';
+import Image from 'next/image';
+import { addFavorite, removeFavorite } from '@/store/favoritesSlice';
+import { favorites, favoritesActive } from './../../images'
+import Cookies from 'js-cookie';
 
 
 export default function Cases({ initialData }: { initialData?: CaseItem[] }) {
     const dispatch = useAppDispatch()
     const { items, status, error, offset, hasMore } = useSelector((state: RootState) => state.cases)
+    const favoriteSlugs = useSelector((state: RootState) => state.favorites.favoritesSlugs);
 
     const parseTags = (tagsString: string) => {
         if (!tagsString) return []
@@ -35,6 +40,14 @@ export default function Cases({ initialData }: { initialData?: CaseItem[] }) {
         }
     }
 
+    const handleToggleFavorite = (slug: string) => {
+        if (favoriteSlugs.includes(slug)) {
+            dispatch(removeFavorite(slug)); 
+        } else {
+            dispatch(addFavorite(slug)); 
+        }
+    }
+
     return (
         <section className="cases">
             <h2 className={styles.h2}>НАШИ РАБОТЫ</h2>
@@ -45,6 +58,7 @@ export default function Cases({ initialData }: { initialData?: CaseItem[] }) {
             <section className={styles["cases-items"]}>
                 {items.map((item: CaseItem) => {
                     const tagsArray = parseTags(item.tagsDisplayed) 
+                    const isFavorite = favoriteSlugs.includes(item.slug);
                     
                     return (
                         <Link href={`/cases/${item.slug}`} key={item.slug}>
@@ -64,6 +78,18 @@ export default function Cases({ initialData }: { initialData?: CaseItem[] }) {
                                     ))}
                                 </ul>
                             )}
+                            <button className={styles.button1} onClick={(e) => {
+                                        e.preventDefault(); 
+                                        handleToggleFavorite(item.slug);
+                                    }}>
+                <Image 
+                    src={isFavorite ? favoritesActive : favorites} 
+                    alt="" 
+                    className={styles.icon}
+                    width={50}
+                    height={50}
+                />
+            </button>
                         </article>
                         </Link>
                     )

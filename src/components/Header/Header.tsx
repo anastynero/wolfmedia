@@ -53,15 +53,14 @@ export default function Header(){
               />
               <h5 className={styles.telephone}>+7 495 257 55 65</h5>
             </div>
-            <article className={styles.favorites}>
+            <Link href="/favorites" className={styles.favorites}>
             <Image 
               src={favoritesActive}
               alt="Избранное"
               width={30}
               height={30}
               className={styles.favorites} />
-            <p className={styles.counter}></p>
-            </article>
+            </Link>
             <button className={styles.button}>
             <span className={styles.text}>Написать нам</span>
             <Image 

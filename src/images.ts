@@ -39,7 +39,7 @@ import services from './../public/img/services-img.jpg';
 import contacts1 from './../public/img/contacts-1.png';
 import contacts2 from './../public/img/contacts-2.png';
 import back from './../public/img/back.svg';
-import favorites from './../public/img/favorites-icon.png';
+import favorites from './../public/img/favorites-icon.svg';
 import favoritesActive from './../public/img/favorites-icon-active.svg';
 
 export { logo, logo2, mail, telephone, vk, ok, facebook, twitter, chef, football, brain, 

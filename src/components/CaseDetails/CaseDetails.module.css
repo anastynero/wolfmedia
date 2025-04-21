@@ -9,3 +9,18 @@
     margin-block-start: 10px;
 }
 
+.wrapper{
+    display: flex;
+    margin-block-start: 100px;
+    align-items: center;
+    gap: 20px;
+}
+
+.case{
+    width: 50%;
+}
+
+.button{
+    background-color: var(--bg-color);
+    border: none;
+}
