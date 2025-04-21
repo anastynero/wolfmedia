@@ -23,7 +23,7 @@ export default function Favorites() {
 
     return(
         <section className={styles.favorites}>
-            <span>{favoritesCount}</span>
+
             {favoriteCases.length > 0 ? (
                 <div className={styles.caseList}>
                 {favoriteCases.map((caseItem: CaseItem) => (
