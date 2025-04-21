@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Navbar from '../Navbar/Navbar';
 import styles from './Header.module.css';
 import SocialMedia from '../SocialMedia/SocialMedia';
-import {logo, telephone, logo2, mail} from './../../images';
+import {logo, telephone, logo2, mail, favoritesActive} from './../../images';
 import { useState } from "react";
 import ModalMenu from "@/components/ModalMenu/ModalMenu";
 
@@ -53,6 +53,15 @@ export default function Header(){
               />
               <h5 className={styles.telephone}>+7 495 257 55 65</h5>
             </div>
+            <article className={styles.favorites}>
+            <Image 
+              src={favoritesActive}
+              alt="Избранное"
+              width={30}
+              height={30}
+              className={styles.favorites} />
+            <p className={styles.counter}></p>
+            </article>
             <button className={styles.button}>
             <span className={styles.text}>Написать нам</span>
             <Image 

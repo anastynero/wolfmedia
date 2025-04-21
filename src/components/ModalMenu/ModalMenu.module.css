@@ -10,10 +10,14 @@
     display: none;
     padding-block: 30px;
     padding-inline: 15px;
-  }
+}
   
 .modal-menu.open {
     display: block;
+}
+
+.text{
+    color: var(--primary-text-color);
 }
 
 .wrapper{

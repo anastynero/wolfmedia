@@ -29,6 +29,7 @@
 @media (max-width: 900px){
     .wrapper{
         column-gap: 20px;
+        grid-template-rows: 3fr 1fr;
     }
 
     .h2{

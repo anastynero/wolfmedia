@@ -19,6 +19,7 @@
     background-color: #3B2341;
     display: flex;  
     flex-direction: column; 
+
 }
 
 .text {
@@ -27,6 +28,7 @@
     margin-block-end: 0;
     padding-block: 18px;
     padding-inline: 18px;
+
 }
 
 .span{
