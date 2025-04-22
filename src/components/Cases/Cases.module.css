@@ -13,6 +13,12 @@
     height: auto;
 }
 
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
 .item{
     background-color: #3B2341;
     padding-block: 20px;
@@ -69,6 +75,34 @@
     background-color: #E3432D;
 }
 
+.star {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.item:hover .stroke {
+    stroke-dashoffset: 0;
+}
+
+.fill {
+    fill: none;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1s ease forwards; 
+}
+
+.starFavorited .fill {
+    fill: gold;
+    clip-path: inset(0 0 0 0);
+}
+
+.stroke {
+    fill: none;
+    stroke: gold;
+    stroke-width: 2;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    transition: stroke-dashoffset 1s ease-in-out;
+}
 @media (max-width: 900px){
     .cases-items{
         gap: 20px;

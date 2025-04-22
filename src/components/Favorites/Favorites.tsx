@@ -1,9 +1,10 @@
-import { CaseItem } from '@/store/casesSlice'
-import styles from './Favorites.module.css'
-import CaseDetails from '../CaseDetails/CaseDetails'
-import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '@/store'
-import { addFavorite, removeFavorite } from '@/store/favoritesSlice';
+import { CaseItem } from '@/store/casesSlice';
+import styles from './Favorites.module.css';
+import CaseDetails from '../CaseDetails/CaseDetails';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '@/store';
+import { removeFavorite } from '@/store/favoritesSlice';
+import { htmlToText } from 'html-to-text';
 
 
 export default function Favorites() {
@@ -23,14 +24,14 @@ export default function Favorites() {
 
     return(
         <section className={styles.favorites}>
-
+            <h2 className={styles.h2}>Избранные кейсы: <span>{favoritesCount}</span></h2>
             {favoriteCases.length > 0 ? (
                 <div className={styles.caseList}>
                 {favoriteCases.map((caseItem: CaseItem) => (
                     <div key={caseItem.slug} className={styles.caseItem}>
-                        <h2 className={styles.caseTitle}>{caseItem.title}</h2>
-                        <button onClick={() => handleRemoveFavorite(caseItem.slug)}>
-                            Удалить из избранного
+                        <h4 className={styles.caseTitle}>{htmlToText(caseItem.title)}</h4>
+                        <button onClick={() => handleRemoveFavorite(caseItem.slug)} className={styles.delete}>
+                            Удалить
                         </button>
                     </div>
                 ))}

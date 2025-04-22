@@ -50,10 +50,25 @@
 .container{
     max-width: var(--container-width);
     margin: 0 auto;
+    display: flex; /* Создаем гибкую структуру */
+    flex-direction: column; /* Располагаем элементы вертикально */
+    min-height: 100vh; /* Минимальная высота равна высоте вьюпорта */
 }
 
 span{
     color: var(--accent-text-color);
+}
+
+button{
+    appearance: none;
+    border: 0;
+    background: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
 }
 
 @media (max-width: 1280px){
