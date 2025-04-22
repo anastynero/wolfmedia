@@ -52,7 +52,7 @@
 }
 
 .right-block{
-    gap: 39px;
+    gap: 20px;
 }
 
 .contacts{
@@ -70,13 +70,11 @@
     outline: 2px solid var(--primary-text-color);
     font-family: var(--font-family);
     font-weight: 600;
-    cursor: pointer;
 }
 
 .button:hover{
     background-color: var(--primary-text-color);
     color: var(--bg-color);
-    outline: none;
     transition: 0.8s ease;
 }
 
