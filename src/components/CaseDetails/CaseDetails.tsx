@@ -3,9 +3,6 @@
 import { CaseItem } from "@/store/casesSlice"
 import { htmlToText } from "html-to-text"
 import styles from './CaseDetails.module.css'
-import { useDispatch, useSelector } from "react-redux"
-import { addFavorite, removeFavorite } from './../../store/favoritesSlice'
-import { RootState } from "@/store"
 
 interface CaseDetailsProps {
     data: CaseItem;

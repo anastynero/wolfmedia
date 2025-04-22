@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import Cookies from 'js-cookie';
 
 interface FavoritesState{
     favoritesSlugs: string[];
@@ -8,10 +7,15 @@ interface FavoritesState{
 const getFavoritesFromLocalStorage = () => {
     if (typeof window !== 'undefined') {
       const savedFavorites = localStorage.getItem('favoritesSlugs');
-      return savedFavorites ? JSON.parse(savedFavorites) : [];
+      if (savedFavorites) {
+          const parsed = JSON.parse(savedFavorites);
+          if (Array.isArray(parsed)) {
+            return parsed.filter((slug): slug is string => typeof slug === 'string');
+      }
     }
+}
     return [];
-  };
+};
 
 const initialState: FavoritesState = {
     favoritesSlugs: getFavoritesFromLocalStorage(), 

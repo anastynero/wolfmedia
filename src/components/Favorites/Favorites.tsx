@@ -1,6 +1,5 @@
 import { CaseItem } from '@/store/casesSlice';
 import styles from './Favorites.module.css';
-import CaseDetails from '../CaseDetails/CaseDetails';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/store';
 import { removeFavorite } from '@/store/favoritesSlice';
@@ -17,7 +16,7 @@ export default function Favorites() {
     );
   
     const favoritesCount = favoriteSlugs.length;
-    
+
     const handleRemoveFavorite = (slug: string) => {
         dispatch(removeFavorite(slug));
     };

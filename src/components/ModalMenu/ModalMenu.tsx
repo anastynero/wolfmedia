@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Navbar from "../Navbar/Navbar";
 import styles from './ModalMenu.module.css'
 import Image from 'next/image';
