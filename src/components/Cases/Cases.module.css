@@ -101,6 +101,7 @@
     .item{
         padding-block: 10px;
         padding-inline: 10px;
+        width: 300px;
     }
 
     .h2{
@@ -109,5 +110,9 @@
 
     .h5{
         font-size: 14px;
+    }
+
+    .tag{
+        font-size: 12px;
     }
 }

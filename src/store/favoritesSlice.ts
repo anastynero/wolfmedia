@@ -29,6 +29,7 @@ const favoritesSlice = createSlice({
             if(!state.favoritesSlugs.includes(action.payload)){
                 state.favoritesSlugs = [...state.favoritesSlugs, action.payload];
                 localStorage.setItem('favoritesSlugs', JSON.stringify(state.favoritesSlugs));
+                console.log(action.payload)
             }
         },
         removeFavorite: (state, action: PayloadAction<string>) => {

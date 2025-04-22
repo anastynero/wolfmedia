@@ -8,6 +8,7 @@ import SocialMedia from '../SocialMedia/SocialMedia';
 import {logo, telephone, logo2, mail, favoritesActive} from './../../images';
 import { useState } from "react";
 import ModalMenu from "@/components/ModalMenu/ModalMenu";
+import ModalForm from '../ModalForm/ModalForm';
 
 export default function Header(){
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -72,6 +73,7 @@ export default function Header(){
             </button>
           </section>
           <ModalMenu isOpen={isModalOpen} onClose={closeMenu} />
+          <ModalForm/>
         </header>
     );
 }

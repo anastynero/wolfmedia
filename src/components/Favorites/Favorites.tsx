@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/store';
 import { removeFavorite } from '@/store/favoritesSlice';
 import { htmlToText } from 'html-to-text';
+import Case from '../Case/Case';
 
 
 export default function Favorites() {
@@ -14,8 +15,13 @@ export default function Favorites() {
     const favoriteCases = allCases.filter((caseItem: CaseItem) => 
         favoriteSlugs.includes(caseItem.slug)
     );
+
+    const status = useSelector((state: RootState) => state.cases.status);
+        if (status !== 'succeeded') {
+            return <p>Загрузка избранных кейсов...</p>;
+        }
   
-    const favoritesCount = favoriteSlugs.length;
+    const favoritesCount = favoriteCases.length;
 
     const handleRemoveFavorite = (slug: string) => {
         dispatch(removeFavorite(slug));
@@ -27,12 +33,11 @@ export default function Favorites() {
             {favoriteCases.length > 0 ? (
                 <div className={styles.caseList}>
                 {favoriteCases.map((caseItem: CaseItem) => (
-                    <div key={caseItem.slug} className={styles.caseItem}>
-                        <h4 className={styles.caseTitle}>{htmlToText(caseItem.title)}</h4>
-                        <button onClick={() => handleRemoveFavorite(caseItem.slug)} className={styles.delete}>
-                            Удалить
-                        </button>
-                    </div>
+                    <Case
+                    key={caseItem.slug}
+                    data={caseItem}
+                    onToggleFavorite={handleRemoveFavorite} 
+                />
                 ))}
             </div>
       ) : (

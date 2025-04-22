@@ -7,9 +7,8 @@ import { useAppDispatch, RootState } from '@/store';
 import { fetchProducts } from '@/store/casesSlice';
 import { htmlToText } from 'html-to-text';
 import { CaseItem } from '@/store/casesSlice';
-import Link from 'next/link';
 import { addFavorite, removeFavorite } from '@/store/favoritesSlice';
-import FavoriteIcon from '../FavoriteIcon/FavoriteIcon';
+import Case from '../Case/Case';
 
 export default function Cases({ initialData }: { initialData?: CaseItem[] }) {
     const dispatch = useAppDispatch()
@@ -42,7 +41,6 @@ export default function Cases({ initialData }: { initialData?: CaseItem[] }) {
         } else {
             dispatch(addFavorite(slug)); 
         }
-        console.log(favoriteSlugs)
     }
 
     return (
@@ -54,42 +52,16 @@ export default function Cases({ initialData }: { initialData?: CaseItem[] }) {
 
             <section className={styles["cases-items"]}>
                 {items.map((item: CaseItem) => {
-                    const tagsArray = parseTags(item.tagsDisplayed) 
                     const isFavorite = favoriteSlugs.includes(item.slug); 
-                    
                     return (
-                        <Link href={`/cases/${item.slug}`} key={item.slug}>
-                            <article className={styles.item}>
-                                <div className={styles.wrapper}>
-                                <h5 className={styles.h5}>{htmlToText(item.title)}</h5>
-                                <FavoriteIcon
-                                  isFavorite={isFavorite}
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                    handleToggleFavorite(item.slug);
-                                  }}
-                                />
-                                </div>
-                                <img
-                                    src={item.poster.image.src}
-                                    alt={item.title}
-                                    className={styles.image}
-                                    width={400}
-                                    height={300}
-                                />
-                                {tagsArray.length > 0 && (
-                                    <ul className={styles.tags}>
-                                        {tagsArray.map((tag, index) => (
-                                            <li key={index} className={styles.tag}>{htmlToText(tag)}</li>
-                                        ))}
-                                    </ul>
-                                )}
-                            </article>
-                        </Link>
+                        <Case
+                            key={item.slug}
+                            data={item}
+                            onToggleFavorite={handleToggleFavorite}
+                        />
                     )
                 })}
             </section>
-
             {hasMore && <button className={styles.button} onClick={loadMore}>ЗАГРУЗИТЬ ЕЩЕ</button>}
         </section>
     )

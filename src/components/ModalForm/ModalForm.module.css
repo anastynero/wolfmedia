@@ -1,0 +1,28 @@
+
+
+.dialog{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #3B2341;
+    border: none;
+    color: var(--primary-text-color);
+    width: 500px;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal-content{
+    padding-block: 30px;
+    padding-inline: 30px;
+    text-align: center;
+}
+
+.input{
+    background-color: #503655;
+    border: 1px solid #6A4E70;
+}

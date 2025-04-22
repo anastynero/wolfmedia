@@ -15,15 +15,15 @@ export interface CaseItem {
   banner: {
     options?: {
       menuColor: string;
-    };
-    poster: {
-      image: {
+    },
+    image?: {
+      src: string;
+    },
+    poster:{
+      image:{
         src: string;
-        src2x?: string;
-        tablet?: string;
-        mobile?: string;
-      };
-    };
+      }
+    }
   };
 }
 
