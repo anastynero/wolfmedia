@@ -24,6 +24,7 @@
     gap: 20px;
     align-items: start;
     margin-block-start: 23px;
+    width: 350px;
 }
 
 .modal-content{
@@ -44,6 +45,7 @@
 .form-group {
     position: relative;
     width: 100%;
+    text-align: left;
 }
 
 .label {
@@ -75,7 +77,12 @@
     font-family: var(--font-family);
     font-weight: 600;
     cursor: pointer;
-    margin-block-start: 30px;
+}
+
+.wrapper-btn{
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .btn:hover{
@@ -85,4 +92,8 @@
 
 .btn:active{
     background-color: #E3432D;
+}
+
+.error{
+    font-size: var(--small-font-size);
 }

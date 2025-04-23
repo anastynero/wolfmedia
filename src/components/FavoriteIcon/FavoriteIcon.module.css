@@ -43,21 +43,21 @@
 
 .clipped:hover{
     animation-name: anim;
-    animation-duration: 2s;
+    animation-duration: 1s;
 }
 
 .outlined {
     background-color: #fff;
-  }
+}
 
 
 @keyframes anim {
     from{
-        background-color: #fff;
+        transform: scale(1);
     }
 
     to{
-        background-color: gold;
+        transform: scale(1.3);
     }
 }
 
