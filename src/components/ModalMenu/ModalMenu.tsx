@@ -2,8 +2,21 @@ import Navbar from "../Navbar/Navbar";
 import styles from './ModalMenu.module.css'
 import Image from 'next/image';
 import telephone from "./../../../public/img/telephone.svg"
+import { useEffect } from "react";
 
 export default function ModalMenu({isOpen}: {isOpen : boolean, onClose: () => void}){
+        useEffect(() => {
+            if (isOpen) {
+              document.body.style.overflow = 'hidden'; 
+              document.body.style.height = '100vh';
+            } else {
+              document.body.style.overflow = ''; 
+            }
+        
+            return () => {
+              document.body.style.overflow = ''; 
+            };
+          }, [isOpen]);
     return(
         <section className={`${styles["modal-menu"]} ${isOpen ? styles.open : ""}`}>
             <div className={styles.wrapper}>

@@ -9,6 +9,7 @@
     padding: 0;
     margin: 0;
     z-index: 1000;
+    width: 500px;
 }
 
 .text{
@@ -24,7 +25,6 @@
     gap: 20px;
     align-items: start;
     margin-block-start: 23px;
-    width: 350px;
 }
 
 .modal-content{
@@ -61,7 +61,8 @@
  }
   
 .input:focus + .label,
-.input:not(:placeholder-shown) + .label {
+.input:not(:placeholder-shown) + .label,
+.input:invalid + .label {
     top: 2px;
     left: 8px;
     font-size: 12px;
@@ -96,4 +97,10 @@
 
 .error{
     font-size: var(--small-font-size);
+}
+
+@media (max-width: 400px){
+    .dialog{
+        width: 300px;
+    }
 }

@@ -1,31 +1,4 @@
-/*.star:hover .stroke {
-    stroke-dashoffset: 0;
-}
-*/
-.fill {
-    fill: none;
-    clip-path: inset(0 100% 0 0);
-    transition: clip-path 5s ease forwards; 
-}
 
-.starFavorited .fill {
-    fill: gold;
-    clip-path: inset(0 0 0 0);
-}
-
-.stroke {
-    fill: none;
-    stroke: gold;
-    stroke-width: 2;
-    stroke-dasharray: 300;
-    stroke-dashoffset: 0;
-}
-
-.star:hover .stroke {
-    animation-name: anim;
-    animation-duration: 2s; 
-    animation-iteration-count: 1;
-}
 
 .svg {
     width: 0;

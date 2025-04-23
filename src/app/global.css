@@ -75,6 +75,10 @@ textarea{
     resize: none;
 }
 
+input, textarea{
+    cursor: text;
+}
+
 @media (max-width: 1280px){
     .container{
         max-width: 900px;
