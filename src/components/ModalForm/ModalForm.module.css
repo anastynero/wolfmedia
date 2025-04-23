@@ -61,11 +61,15 @@
  }
   
 .input:focus + .label,
-.input:not(:placeholder-shown) + .label,
-.input:invalid + .label {
+.input:not(:placeholder-shown) + .label {
     top: 2px;
     left: 8px;
     font-size: 12px;
+}
+
+.input:not(:focus){
+    top: 16px;
+    left: 12px;
 }
 
 .btn{

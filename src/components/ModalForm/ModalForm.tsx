@@ -77,10 +77,11 @@ export default function ModalForm({ isOpen, onClose } : ModalFormProps){
         console.log(data)
         reset()
     }
-    
+
     useEffect(() => {
-        setFocus('username')
-    }, [])
+      register('telephone');
+      setFocus('username');
+    }, [register, setFocus]);
 
     const rawPhone = watch('telephone');
 
@@ -122,42 +123,44 @@ export default function ModalForm({ isOpen, onClose } : ModalFormProps){
                         type="text" 
                         id="name" 
                         required 
-                        placeholder=""
-                        minLength={2}
-                        maxLength={20}/>
+                        placeholder=""/>
+                        <label className={styles.label} htmlFor="name">Ваше имя</label>
                         {errors.username && (
                           <span  className={styles.error}>
                            {errors.username?.message}
                           </span>
                         )}
-                        <label className={styles.label} htmlFor="name">Ваше имя</label>
                     </div>
                     <div className={styles["form-group"]}>
-                        <input {...register('telephone')} className={styles.input}
-                         id="telephone" required placeholder=""   
-                        value={formatPhone(rawPhone || '')}
-                        onChange={(e) => {
-                          const raw = e.target.value.replace(/\D/g, '');
-                          setValue('telephone', raw, { shouldValidate: true }); 
-                        }}
-                      />
-                      
+                    <input
+                      name="telephone"
+                      className={styles.input}
+                      id="telephone"
+                      required
+                      placeholder=""
+                      value={formatPhone(rawPhone || '')}
+                      onChange={(e) => {
+                        const raw = e.target.value.replace(/\D/g, '').slice(0, 11);
+                        setValue('telephone', raw, { shouldValidate: true }); 
+                      }}
+                    />
+                      <label className={styles.label} htmlFor="telephone">Ваш телефон</label>
                         {errors.telephone && (
                           <span  className={styles.error}>
                            {errors.telephone?.message}
                           </span>
                         )}
-                        <label className={styles.label} htmlFor="telephone">Ваш телефон</label>
+                        
                     </div>
                     <div className={styles["form-group"]}>
                         <textarea {...register('message')} className={styles.input} id="message" required placeholder=" " maxLength={70}>
                         </textarea>
+                        <label className={styles.label} htmlFor="message">Ваше сообщение</label>
                         {errors.message && (
                           <span  className={styles.error}>
                            {errors.message?.message}
                           </span>
                         )}
-                        <label className={styles.label} htmlFor="message">Ваше сообщение</label>
                     </div>
                     <div className={styles["wrapper-btn"]}>
                       <button className={styles.btn} type='submit'>ОТПРАВИТЬ</button>
