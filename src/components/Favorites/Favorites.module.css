@@ -31,6 +31,12 @@
     margin-block-start: 50px;
 }
 
+.loading{
+    text-align: center;
+    margin-block-start: 200px;
+    font-size: var(--h5-font-size);
+}
+
 @media (max-width: 600px) {
     .caseList{
         grid-template-columns:  1fr;

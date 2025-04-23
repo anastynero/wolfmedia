@@ -27,13 +27,37 @@
     animation-iteration-count: 1;
 }
 
+.svg {
+    width: 0;
+    height: 0;
+  }
+
+.clipped {
+    width: 30px;
+    height: 30px;
+    background-color: gold;
+    background-size: cover;
+    -webkit-clip-path: url(#my-clip-path);
+    clip-path: url(#my-clip-path);
+}
+
+.clipped:hover{
+    animation-name: anim;
+    animation-duration: 2s;
+}
+
+.outlined {
+    background-color: #fff;
+  }
+
+
 @keyframes anim {
     from{
-        stroke-dashoffset: 300;
+        background-color: #fff;
     }
 
     to{
-        stroke-dashoffset: 0;
+        background-color: gold;
     }
 }
 

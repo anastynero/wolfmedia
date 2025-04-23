@@ -3,7 +3,6 @@ import styles from './Favorites.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/store';
 import { removeFavorite } from '@/store/favoritesSlice';
-import { htmlToText } from 'html-to-text';
 import Case from '../Case/Case';
 
 
@@ -17,9 +16,10 @@ export default function Favorites() {
     );
 
     const status = useSelector((state: RootState) => state.cases.status);
-        if (status !== 'succeeded') {
-            return <p>Загрузка избранных кейсов...</p>;
-        }
+    
+    if (status !== 'succeeded') {
+            return <p className={styles.loading}>Загрузка избранных кейсов...</p>;
+    }
   
     const favoritesCount = favoriteCases.length;
 

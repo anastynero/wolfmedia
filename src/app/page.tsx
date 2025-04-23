@@ -5,6 +5,7 @@ import Info from "@/components/Info/Info";
 import BrandCommunication from "@/components/BrandCommunication/BrandCommunication";
 import CommunityAutomation from "@/components/CommunityAutomation/CommunityAutomation";
 import Contacts from "@/components/Contacts/Contacts";
+import FavoriteIcon from "@/components/FavoriteIcon/FavoriteIcon";
 
 
 export default function Home() {

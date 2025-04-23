@@ -14,6 +14,11 @@ export default function Header(){
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openMenu = () => setIsModalOpen(true);
   const closeMenu = () => setIsModalOpen(false);
+  const [isModalFormOpen, setIsModalFormOpen] = useState(false);
+  const openForm = () => 
+    setIsModalFormOpen(true);
+  const closeForm = () => 
+    setIsModalFormOpen(false);
     return(
         <header className={styles.header}>
           <section className={styles["left-block"]}>
@@ -62,18 +67,18 @@ export default function Header(){
               height={30}
               className={styles.favorites} />
             </Link>
-            <button className={styles.button}>
-            <span className={styles.text}>Написать нам</span>
-            <Image 
-            src={mail}
-            alt="Написать нам"
-            width={24}
-            height={24}
-            className={styles.icon} />
+            <button className={styles.button} onClick={openForm}>
+              <span className={styles.text}>Написать нам</span>
+              <Image 
+              src={mail}
+              alt="Написать нам"
+              width={24}
+              height={24}
+              className={styles.icon} />
             </button>
           </section>
           <ModalMenu isOpen={isModalOpen} onClose={closeMenu} />
-          <ModalForm/>
+          <ModalForm isOpen={isModalFormOpen} onClose={closeForm}/>
         </header>
     );
 }

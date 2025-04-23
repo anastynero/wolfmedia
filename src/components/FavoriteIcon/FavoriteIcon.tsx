@@ -8,27 +8,15 @@ interface FavoriteIconProps {
 export default function FavoriteIcon({ isFavorite, onClick }: FavoriteIconProps){
     return(
     <button className={styles.button1} onClick={onClick}>
-        <svg 
-            className={`${styles.star} ${isFavorite ? styles.starFavorited : ''}`}
-            viewBox="0 0 50 50"
-            width={50}
-            height={50}
-        >
-            <path
-                className={styles.stroke}
-                d="M31.547 12a.848.848 0 00-.677-.577l-9.427-1.376-4.224-8.532a.847.847 0 00-1.516 
-                0l-4.218 8.534-9.427 1.355a.847.847 0 00-.467 1.467l6.823 6.664-1.612 9.375a.847.847 
-                0 001.23.893l8.428-4.434 8.432 4.432a.847.847 0 001.229-.894l-1.615-9.373 
-                6.822-6.665a.845.845 0 00.214-.869z"
-            />
-            <path
-                className={styles.fill}
-                d="M31.547 12a.848.848 0 00-.677-.577l-9.427-1.376-4.224-8.532a.847.847 0 
-                00-1.516 0l-4.218 8.534-9.427 1.355a.847.847 0 00-.467 1.467l6.823 6.664-1.612 
-                9.375a.847.847 0 001.23.893l8.428-4.434 8.432 4.432a.847.847 0 001.229-.894l-1.615-9.373 
-                6.822-6.665a.845.845 0 00.214-.869z"
-            />
+        <svg className={styles.svg}>
+            <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox" className={styles.path}>
+                <path d="M1,0.416 a0.028,0.029,0,0,0,-0.022,-0.02 l-0.311,-0.048,-0.14,-0.296 a0.028,0.029,0,0,0,-0.05,0
+                 l-0.139,0.296,-0.311,0.047 a0.028,0.029,0,0,0,-0.015,0.051 l0.225,0.231,-0.053,0.325
+                  a0.028,0.029,0,0,0,0.041,0.031 l0.278,-0.154,0.279,0.154 a0.028,0.029,0,0,0,0.041,-0.031
+                   l-0.053,-0.325,0.225,-0.231 a0.028,0.029,0,0,0,0.007,-0.03"></path>
+            </clipPath>
         </svg>
+        <div className={`${styles.clipped} ${isFavorite ? styles.filled : styles.outlined}`}></div>
     </button>
     )
 }
