@@ -5,6 +5,9 @@ import { useEffect, useRef } from 'react';
 import styles from './ModalForm.module.css'
 import { z } from 'zod'
 import { SubmitHandler, useForm } from 'react-hook-form';
+import Image from 'next/image';
+import {close} from '@/images'
+
 
 interface ModalFormProps{
     isOpen: boolean;
@@ -27,8 +30,7 @@ const formSchema = z
 
     message: z
       .string()
-
-      .max(100, { message: 'Максимальное количество символов: 100' }),
+      .max(80, { message: 'Максимальное количество символов: 80' }),
 });
 
 type FormSchema = z.infer<typeof formSchema>
@@ -110,7 +112,7 @@ export default function ModalForm({ isOpen, onClose } : ModalFormProps){
     
       return formatted;
     };
-    const usernameValue = watch('username');
+
     return(
       isOpen && (
             <dialog ref={dialogRef} className={styles.dialog} onClick={handleClickOutside}>
@@ -167,6 +169,14 @@ export default function ModalForm({ isOpen, onClose } : ModalFormProps){
                     </div>
                     </form>
                     <p className={styles.text}>Нажимая кнопку &laquo;Отправить&raquo; вы&nbsp;даёте своё согласие на&nbsp;обработку персональных данных</p>
+                    <Image
+                      src={close}
+                      alt='Закрыть'
+                      width={30}
+                      height={30}
+                      className={styles.close}
+                      onClick={onClose}
+                    />
                 </section>
             </dialog>
     ))

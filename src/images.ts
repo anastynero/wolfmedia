@@ -41,8 +41,10 @@ import contacts2 from './../public/img/contacts-2.png';
 import back from './../public/img/back.svg';
 import favorites from './../public/img/favorites-icon.svg';
 import favoritesActive from './../public/img/favorites-icon-active.svg';
+import close from './../public/img/Close.svg';
 
 export { logo, logo2, mail, telephone, vk, ok, facebook, twitter, chef, football, brain, 
     animal, baby, woman, humor, drawing, airplane, logomini, footerlogo, image1, image2, 
     image3, image4, content, eye, tracking, tooltip1, tooltip2, tooltip3, hearts, virus, 
-    stars, chart, repair, chronometr, start, youtube, services, contacts1, contacts2, back, favorites, favoritesActive };
+    stars, chart, repair, chronometr, start, youtube, services, contacts1, contacts2, back,
+     favorites, favoritesActive, close };
