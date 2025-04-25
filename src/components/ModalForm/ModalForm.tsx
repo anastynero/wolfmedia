@@ -9,6 +9,7 @@ import TelephoneStep from '../TelephoneStep/TelephoneStep';
 import MessageStep from '../MessageStep/MessageStep';
 import { formSchema, FormSchema } from '@/types/formSchema';
 import { z } from 'zod';
+import SuccessForm from '../SuccessForm/SuccessForm';
 
 
 interface ModalFormProps{
@@ -26,6 +27,7 @@ export default function ModalForm({ isOpen, onClose } : ModalFormProps){
     const [errors, setErrors] = useState<Partial<FormSchema>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [completedSteps, setCompletedSteps] = useState<number[]>([]);
+    const [isSuccess, setIsSuccess] = useState(false);
 
     useEffect(() => {
         const dialog = dialogRef.current;
@@ -128,9 +130,12 @@ export default function ModalForm({ isOpen, onClose } : ModalFormProps){
       try {
         formSchema.parse(formData);
         console.log(formData);
-        
-        onClose();
-        setFormData({ username: '', telephone: '', message: '' });
+        setIsSuccess(true);
+        setTimeout(() => {
+          onClose();
+          setIsSuccess(false);
+          setFormData({ username: '', telephone: '', message: '' });
+        }, 100000000);
       } catch (error) {
         if (error instanceof z.ZodError) {
           const newErrors: Partial<FormSchema> = {};
@@ -140,6 +145,7 @@ export default function ModalForm({ isOpen, onClose } : ModalFormProps){
           });
           setErrors(newErrors);
         }
+        setIsSuccess(false);
       } finally {
         setIsSubmitting(false);
       }
@@ -149,6 +155,10 @@ export default function ModalForm({ isOpen, onClose } : ModalFormProps){
       isOpen && (
             <dialog ref={dialogRef} className={styles.dialog} onClick={handleClickOutside}>
                 <section className={styles["modal-content"]}>
+                {isSuccess ? (
+                <SuccessForm />
+                      ) : (
+                        <>
                     <h4>НАПИСАТЬ НАМ</h4>
                     <form action="" className={styles.wrapper} onSubmit={handleSubmit}>
                       <div className={styles.step}>
@@ -195,6 +205,8 @@ export default function ModalForm({ isOpen, onClose } : ModalFormProps){
                       className={styles.close}
                       onClick={onClose}
                     />
+                    </>
+                    )}
                 </section>
             </dialog>
     ))

@@ -5,8 +5,6 @@ import Info from "@/components/Info/Info";
 import BrandCommunication from "@/components/BrandCommunication/BrandCommunication";
 import CommunityAutomation from "@/components/CommunityAutomation/CommunityAutomation";
 import Contacts from "@/components/Contacts/Contacts";
-import FavoriteIcon from "@/components/FavoriteIcon/FavoriteIcon";
-import SuccessForm from "@/components/SuccessForm/SuccessForm";
 
 
 export default function Home() {
@@ -19,7 +17,6 @@ export default function Home() {
     <BrandCommunication/>
     <CommunityAutomation/>
     <Contacts/>
-    <SuccessForm/>
   </div>
   );
 }
