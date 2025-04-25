@@ -1,0 +1,45 @@
+.wrapper{
+    position: relative;
+    width: 100%;
+}
+
+.success{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 200px;
+    background-color: #3B2341;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-block: 20px;
+    padding-inline: 20px;
+    text-align: center;
+    border: none;
+}
+
+.text{
+    margin: 0;
+    color: var(--primary-text-color);
+    font-size: var(--h5-font-size);
+}
+
+.check {
+    stroke: #7ac142;
+    stroke-width: 2;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    stroke-linecap: round;
+    animation-name: stroke-check;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes stroke-check {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }

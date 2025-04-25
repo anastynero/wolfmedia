@@ -128,6 +128,7 @@ export default function ModalForm({ isOpen, onClose } : ModalFormProps){
       try {
         formSchema.parse(formData);
         console.log(formData);
+        
         onClose();
         setFormData({ username: '', telephone: '', message: '' });
       } catch (error) {
@@ -150,22 +151,36 @@ export default function ModalForm({ isOpen, onClose } : ModalFormProps){
                 <section className={styles["modal-content"]}>
                     <h4>НАПИСАТЬ НАМ</h4>
                     <form action="" className={styles.wrapper} onSubmit={handleSubmit}>
+                      <div className={styles.step}>
                         <UserNameStep 
                         formData={formData} 
                         errors={errors} 
                         onChange={handleChange} 
                         isActive={isStepActive(1)}/>
+                        <svg width={20} height={50}>
+                          <line x1="10" x2="10" y1="0" y2="70" stroke="#6A4E70" strokeWidth="2" 
+                          className={ completedSteps.length >= 1 ? styles.line : ''}/>
+                          </svg>
+                        </div>
+                        <div className={styles.step}>
                         <TelephoneStep 
                         formData={formData} 
                         errors={errors} 
                         onChange={handlePhoneChange} 
                         formatPhone={formatPhone} 
                         isActive={isStepActive(2)}/>
+                        <svg width={20} height={50}><line x1="10" x2="10" y1="0" y2="70" stroke="#6A4E70" strokeWidth="2"
+                        className={ completedSteps.length >= 2 ? styles.line : ''}/></svg>
+                        </div>
+                        <div className={styles.step}>
                         <MessageStep 
                         formData={formData} 
                         errors={errors} 
                         onChange={handleChange}
                         isActive={isStepActive(3)}/>
+                        <svg width={20} height={70}><line x1="10" x2="10" y1="0" y2="70" stroke="#6A4E70" strokeWidth="2"
+                        className={ completedSteps.length >= 3 ? styles.line : ''}/></svg>
+                        </div>
                     <div className={styles["wrapper-btn"]}>
                       <button type="submit" className={styles.btn} disabled={isSubmitting || completedSteps.length < 3}>ОТПРАВИТЬ</button>
                     </div>

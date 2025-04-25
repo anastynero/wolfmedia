@@ -1,7 +1,7 @@
 import { FormSchema } from '@/types/formSchema';
 import styles from '@/components/ModalForm/ModalForm.module.css';
 
-interface Step2Props {
+interface TelephoneProps {
   formData: FormSchema;
   errors: Partial<FormSchema>;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -9,7 +9,7 @@ interface Step2Props {
   isActive: boolean;
 }
 
-export default function Step2({ formData, errors, onChange, formatPhone, isActive }: Step2Props) {
+export default function TelephoneStep({ formData, errors, onChange, formatPhone, isActive }: TelephoneProps) {
   return (
     <div className={styles["form-group"]}>
       <input

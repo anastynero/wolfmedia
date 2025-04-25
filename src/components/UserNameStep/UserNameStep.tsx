@@ -8,7 +8,7 @@ interface UserNameProps {
   isActive: boolean;
 }
 
-export default function Step1({ formData, errors, onChange, isActive }: UserNameProps) {
+export default function UserNameStep({ formData, errors, onChange, isActive }: UserNameProps) {
   return (
     <div className={styles["form-group"]}>
       <input

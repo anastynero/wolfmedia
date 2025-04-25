@@ -99,6 +99,10 @@
     background-color: #E3432D;
 }
 
+.btn:disabled{
+    background-color: grey;
+}
+
 .error{
     font-size: var(--small-font-size);
 }
@@ -108,6 +112,25 @@
     position: absolute;
     top: 20px;
     right: 30px;
+}
+
+.step{
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    gap: 10px;
+    width: 100%;
+}
+
+.line{
+    animation-name: line;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes line {
+    100%{
+        stroke: green;
+    }
 }
 
 @media (max-width: 400px){
