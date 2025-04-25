@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch, RootState } from '@/store';
 import { fetchProducts } from '@/store/casesSlice';
-import { htmlToText } from 'html-to-text';
 import { CaseItem } from '@/store/casesSlice';
 import { addFavorite, removeFavorite } from '@/store/favoritesSlice';
 import Case from '../Case/Case';
@@ -14,10 +13,6 @@ export default function Cases({ initialData }: { initialData?: CaseItem[] }) {
     const dispatch = useAppDispatch()
     const { items, status, error, offset, hasMore } = useSelector((state: RootState) => state.cases)
     const favoriteSlugs = useSelector((state: RootState) => state.favorites.favoritesSlugs);
-    const parseTags = (tagsString: string) => {
-        if (!tagsString) return []
-        return tagsString.split(', ').map(tag => tag.trim())
-    }
 
     useEffect(() => {
         if (initialData && items.length === 0) {
@@ -52,7 +47,6 @@ export default function Cases({ initialData }: { initialData?: CaseItem[] }) {
 
             <section className={styles["cases-items"]}>
                 {items.map((item: CaseItem) => {
-                    const isFavorite = favoriteSlugs.includes(item.slug); 
                     return (
                         <Case
                             key={item.slug}

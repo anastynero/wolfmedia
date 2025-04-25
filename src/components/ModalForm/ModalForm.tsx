@@ -7,7 +7,7 @@ import {close} from '@/images'
 import UserNameStep from '../UserNameStep/UserNameStep';
 import TelephoneStep from '../TelephoneStep/TelephoneStep';
 import MessageStep from '../MessageStep/MessageStep';
-import { formSchema, FormSchema } from '@/types/formSchema';
+import { formSchema, FormSchema } from './types/formSchema';
 import { z } from 'zod';
 import SuccessForm from '../SuccessForm/SuccessForm';
 
@@ -135,7 +135,7 @@ export default function ModalForm({ isOpen, onClose } : ModalFormProps){
           onClose();
           setIsSuccess(false);
           setFormData({ username: '', telephone: '', message: '' });
-        }, 3000);
+        }, 2000);
       } catch (error) {
         if (error instanceof z.ZodError) {
           const newErrors: Partial<FormSchema> = {};

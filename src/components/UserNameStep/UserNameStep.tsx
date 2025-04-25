@@ -1,4 +1,4 @@
-import { FormSchema } from '@/types/formSchema';
+import { FormSchema } from '@/components/ModalForm/types/formSchema';
 import styles from '@/components/ModalForm/ModalForm.module.css';
 
 interface UserNameProps {

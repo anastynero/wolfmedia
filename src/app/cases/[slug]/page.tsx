@@ -1,6 +1,6 @@
 "use client";
 
-import { notFound, useParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import Case from "@/components/Case/Case";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "@/store";
