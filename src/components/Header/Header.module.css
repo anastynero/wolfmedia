@@ -79,7 +79,7 @@
 }
 
 .button:active{
-    background-color: #503655;
+    background-color: var(--four-color);
     color: var(--primary-text-color);
     transition: 0.8s ease;
 }

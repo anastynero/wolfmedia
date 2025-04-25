@@ -3,7 +3,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #3B2341;
+    background-color: var(--five-color);
     border: none;
     color: var(--primary-text-color);
     padding: 0;
@@ -35,7 +35,7 @@
 }
 
 .input{
-    background-color: #503655;
+    background-color: var(--four-color);
     border: 1px solid #6A4E70;
     width: 100%;
     padding: 18px 12px 8px;
@@ -54,7 +54,7 @@
     top: 16px;
     left: 12px;
     color: #927398;
-    background-color: #503655;
+    background-color: var(--four-color);
     padding: 0 4px;
     font-size: 16px;
     transition: 0.2s ease;
@@ -92,12 +92,12 @@
 }
 
 .btn:hover{
-    background-color: #FF852D;
+    background-color: var(--button-hover-color);
     transition: 0.3s ease;
 }
 
 .btn:active{
-    background-color: #E3432D;
+    background-color: var(--button-active-color);
 }
 
 .btn:disabled{

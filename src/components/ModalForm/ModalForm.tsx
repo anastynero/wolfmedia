@@ -135,7 +135,7 @@ export default function ModalForm({ isOpen, onClose } : ModalFormProps){
           onClose();
           setIsSuccess(false);
           setFormData({ username: '', telephone: '', message: '' });
-        }, 100000000);
+        }, 3000);
       } catch (error) {
         if (error instanceof z.ZodError) {
           const newErrors: Partial<FormSchema> = {};

@@ -1,48 +1,11 @@
-@font-face {
-    font-family: 'SeraPro';
-    src: url('../../public/fonts/CeraPro-Regular.woff') format('woff'),
-         url('../../public/fonts/CeraPro-Regular.ttf') format('truetype');
-    font-weight: 400;
-  }
-
-  @font-face {
-    font-family: 'SeraPro';
-    src: url('../../public/fonts/CeraPro-Medium.woff') format('woff'),
-         url('../../public/fonts/CeraPro-Medium.ttf') format('truetype');
-    font-weight: 600;
-  }
-  
-  @font-face {
-    font-family: 'SeraPro';
-    src: url('../../public/fonts/CeraPro-Bold.woff') format('woff'),
-         url('../../public/fonts/CeraPro-Bold.ttf') format('truetype');
-    font-weight: 700;
-  }
-  
-  @font-face {
-    font-family: 'SeraPro';
-    src: url('../../public/fonts/CeraPro-Black.woff') format('woff'),
-         url('../../public/fonts/CeraPro-Black.ttf') format('truetype');
-    font-weight: 900;
-  }
+@import 'fonts.css';
+@import 'colors.css';
 
 :root{
-    --primary-text-color: #FFFFFF;
-    --accent-text-color: #F25C3A;
-    --small-text-color: #927398;
-    --h1-font-size: 50px;
-    --h2-font-size: 40px;
-    --h3-font-size: 28px;
-    --h4-font-size: 22px;
-    --h5-font-size: 18px;
-    --paragraph-font-size: 16px;
-    --small-font-size: 14px;
     --large-margin: 120px;
     --medium-margin: 60px;
     --small-margin: 40px;
     --container-width: 1170px;
-    --bg-color: #2F1634;
-    --font-family: 'SeraPro';
     --header-height: 50px;
     --gap: 30px;
 }
@@ -89,11 +52,6 @@ input, textarea{
 @media (max-width: 900px){
     :root{
         --container-width: 860px;
-        --h1-font-size: 34px;
-        --h2-font-size: 30px;
-        --h3-font-size: 26px;
-        --h4-font-size: 22px;
-        --h5-font-size: 16px;
     }
 
     .container{
@@ -104,23 +62,12 @@ input, textarea{
 @media (max-width: 600px){
     :root{
         --container-width: 560px;
-        --h1-font-size: 30px;
-        --h2-font-size: 26px;
-        --h3-font-size: 18px;
-        --h4-font-size: 18px;
-        --h5-font-size: 16px;
     }
 }
 
 @media (max-width: 400px){
     :root{
         --container-width: 320px;
-        --paragraph-font-size: 13px;
-        --h1-font-size: 26px;
-        --h2-font-size: 24px;
-        --h3-font-size: 14px;
-        --h4-font-size: 14px;
-        --h5-font-size: 14px;
         --large-margin: 80px;
     }
 }

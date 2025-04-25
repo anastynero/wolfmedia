@@ -16,14 +16,14 @@
 
 .item {
     text-align: center;
-    background-color: #3B2341;
+    background-color: var(--five-color);
     display: flex;  
     flex-direction: column; 
 
 }
 
 .text {
-    background-color: #503655;
+    background-color: var(--four-color);
     flex-grow: 1;        
     margin-block-end: 0;
     padding-block: 18px;
@@ -43,7 +43,7 @@
 }
 
 .services-item{
-    border: 2px solid #503655;
+    border: 2px solid var(--four-color);
     display: flex;
     gap: 16px;
     align-items: center;

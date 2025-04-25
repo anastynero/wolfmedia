@@ -25,3 +25,46 @@
          url('../../public/fonts/CeraPro-Black.ttf') format('truetype');
     font-weight: 900;
   }
+
+  :root{
+    --h1-font-size: 50px;
+    --h2-font-size: 40px;
+    --h3-font-size: 28px;
+    --h4-font-size: 22px;
+    --h5-font-size: 18px;
+    --paragraph-font-size: 16px;
+    --small-font-size: 14px;
+    --font-family: 'SeraPro';
+  }
+
+  @media (max-width: 900px){
+     :root{
+         --h1-font-size: 34px;
+         --h2-font-size: 30px;
+         --h3-font-size: 26px;
+         --h4-font-size: 22px;
+         --h5-font-size: 16px;
+     }
+ }
+
+ @media (max-width: 600px){
+     :root{
+         --h1-font-size: 30px;
+         --h2-font-size: 26px;
+         --h3-font-size: 18px;
+         --h4-font-size: 18px;
+         --h5-font-size: 16px;
+     }
+ }
+ 
+ @media (max-width: 400px){
+     :root{
+         --h1-font-size: 26px;
+         --h2-font-size: 24px;
+         --h3-font-size: 14px;
+         --h4-font-size: 14px;
+         --h5-font-size: 14px;
+         --paragraph-font-size: 13px;
+         --small-font-size: 11px;
+     }
+ }

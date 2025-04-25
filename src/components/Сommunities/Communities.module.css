@@ -25,7 +25,7 @@
 }
 
 .community:hover{
-    background-color: #503655;
+    background-color: var(--four-color);
     transition: 0.8s ease;
 }
 
@@ -35,7 +35,7 @@
   }
 
 .tooltip{
-    background-color: #fff;
+    background-color: var(--primary-text-color);
     position: absolute;
     display: flex;
     width: 100%;
@@ -55,7 +55,7 @@
     bottom: 100%;
     left: 50%;
     transform: rotateZ(45deg) translateY(15px);
-    border: 10px solid #fff;
+    border: 10px solid var(--primary-text-color);
 }
 
 .tooltip-text{

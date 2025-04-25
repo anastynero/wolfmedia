@@ -17,7 +17,7 @@
 }
 
 .text{
-    background-color: #503655;
+    background-color: var(--four-color);
     text-align: center;
     width: 100%;
     padding-block: 20px;

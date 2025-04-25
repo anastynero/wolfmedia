@@ -5,7 +5,7 @@
 }
 
 .success{
-    background-color: #3B2341;
+    background-color: var(--five-color);
     display: flex;
     flex-direction: column;
     gap: 20px;
