@@ -19,6 +19,13 @@ export const useForm = (onSuccess: () => void) => {
       setFormData(prev => ({ ...prev, telephone: raw }));
       validateField('telephone', raw);
     };
+
+    const resetForm = () => {
+        setFormData({ username: '', telephone: '', message: '' });
+        setErrors({});
+        setCompletedSteps([]);
+        setIsSubmitting(false);
+      };
   
     const validateField = (field: keyof FormSchema, value: string) => {
       try {
@@ -84,5 +91,6 @@ export const useForm = (onSuccess: () => void) => {
       completedSteps,
       isSubmitting,
       isStepActive,
+      resetForm
     };
   };
