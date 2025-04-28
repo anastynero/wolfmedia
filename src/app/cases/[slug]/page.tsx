@@ -6,13 +6,14 @@ import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "@/store";
 import { addFavorite, removeFavorite } from "@/store/favoritesSlice";
 import { useEffect, useState } from "react";
+import { CaseItem } from "@/store/casesSlice";
 
 export default function CasePage() {
   const params = useParams();
   const slugParam = params?.slug;
   const slug = Array.isArray(slugParam) ? slugParam[0] : slugParam;
 
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<CaseItem | null>(null);
   const favoriteSlugs = useSelector(
     (state: RootState) => state.favorites.favoritesSlugs
   );
