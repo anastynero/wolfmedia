@@ -62,6 +62,7 @@ export const useForm = (onSuccess: () => void) => {
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
       setIsSubmitting(true);
+      setCompletedSteps([]);
   
       try {
         formSchema.parse(formData);
