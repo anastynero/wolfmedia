@@ -1,11 +1,12 @@
 .case{
     padding-block: 10px;
     padding-inline: 10px;
+    border: 2px solid transparent;
 }
 
 .case:hover{
-    border: 2px solid var(--accent-text-color);
-    transition: border-width 0.3s ease-in-out;
+    border-color: var(--accent-text-color);
+    transition: border-color 0.3s ease-in-out;
 }
 
 .image{
