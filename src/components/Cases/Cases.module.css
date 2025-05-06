@@ -88,6 +88,10 @@
     border-radius: 10px;
 }
 
+.category:hover{
+    opacity: 0.5;
+}
+
 .category.active{
     padding: 20px;
     border: 2px solid var(--accent-text-color);

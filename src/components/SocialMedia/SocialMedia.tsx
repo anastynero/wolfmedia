@@ -13,7 +13,7 @@ export default function SocialMedia(){
     return(
         <div className={styles["social-media"]}>
             {icons.map((item, index)=> (
-                <Link href={item.href} key={index}>
+                <Link href={item.href} key={index} className={styles.icon}>
                     <Image
                     src={item.src}
                     alt={item.title}

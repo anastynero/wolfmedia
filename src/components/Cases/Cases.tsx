@@ -1,7 +1,7 @@
 "use client"
 
 import styles from './Cases.module.css'
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch, RootState } from '@/store';
 import { fetchProducts, resetCases } from '@/store/casesSlice';
@@ -9,20 +9,20 @@ import { CaseItem } from '@/store/casesSlice';
 import { addFavorite, removeFavorite } from '@/store/favoritesSlice';
 import Case from '../Case/Case';
 
-const CATEGORIES = {
-    'Все': null,
-    'Дизайн': 'design',
-    'Аналитика': 'analytics',
-    'Разработка': 'development',
-    'Креатив': 'creative'
-  };
+const CATEGORIES = [
+    {title: 'Все', value: undefined},
+    {title: 'Дизайн', value:'design'},
+    {title: 'Аналитика', value:'analytics'},
+    {title: 'Разработка', value:'development'}
+];
 
 export default function Cases({ initialData }: { initialData?: CaseItem[] }) {
     const dispatch = useAppDispatch()
-    const { items, status, error, offset, hasMore } = useSelector((state: RootState) => state.cases)
+    const { items, offset, hasMore } = useSelector((state: RootState) => state.cases)
     const favoriteSlugs = useSelector((state: RootState) => state.favorites.favoritesSlugs);
-    const [activeCategory, setActiveCategory] = useState<keyof typeof CATEGORIES>('Все');
-
+    const [activeCategory, setActiveCategory] = useState<string>(CATEGORIES[0].title);
+    const activeCategoryValue = CATEGORIES.find(c => c.title === activeCategory)?.value
+    
     useEffect(() => {
         if (initialData && initialData.length > 0 && items.length === 0 && activeCategory === 'Все') {
           dispatch({ type: 'cases/initialize', payload: initialData });
@@ -31,36 +31,33 @@ export default function Cases({ initialData }: { initialData?: CaseItem[] }) {
 
     useEffect(() => {
         dispatch(resetCases());
-        dispatch(fetchProducts({ offset: 0, category: activeCategory !== 'Все' ? CATEGORIES[activeCategory] : undefined }));
-    }, [activeCategory, dispatch]);
+        dispatch(fetchProducts({ offset: 0, category: activeCategoryValue }))
+    }, [activeCategoryValue, dispatch])
 
-    const loadMore = () => {
-        if(hasMore){
-            dispatch(fetchProducts({offset, category: activeCategory !== 'Все' ? CATEGORIES[activeCategory] : undefined }));
+    const loadMore = useCallback(() => {
+        if (hasMore) {
+          dispatch(fetchProducts({ offset, category: activeCategoryValue }))
         }
-    }
+      }, [dispatch, hasMore, offset, activeCategoryValue])
 
-    const handleToggleFavorite = (slug: string) => {
-        if (favoriteSlugs.includes(slug)) {
-            dispatch(removeFavorite(slug)); 
-        } else {
-            dispatch(addFavorite(slug)); 
-        }
-    }
+    const handleToggleFavorite = useCallback((slug: string) => {
+      const action = favoriteSlugs.includes(slug) ? removeFavorite(slug) : addFavorite(slug)
+      dispatch(action)
+    }, [dispatch, favoriteSlugs])
 
     return (
         <section className="cases">
             <h2 className={styles.h2}>НАШИ РАБОТЫ</h2>
             <section className={styles.categories}>
-                {(Object.keys(CATEGORIES) as Array<keyof typeof CATEGORIES>).map(category => (
+                {(CATEGORIES.map(({title}) => (
                     <button 
-                        key={category}
-                        className={`${styles.category} ${activeCategory === category ? styles.active : ''}`}
-                        onClick={() => setActiveCategory(category)}
+                        key={title}
+                        className={`${styles.category} ${activeCategory === title ? styles.active : ''}`}
+                        onClick={() => setActiveCategory(title)}
                     >
-                        {category}
+                        {title}
                     </button>
-                ))}
+                )))}
             </section>
             <section className={styles["cases-items"]}>
                 {items.map((item: CaseItem) => {
