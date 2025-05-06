@@ -75,6 +75,24 @@
     background-color: var(--button-active-color);
 }
 
+.categories{
+    display: flex;
+    gap: 10px;
+    margin-block-start: 20px;
+}
+
+.category{
+    padding-block: 10px;
+    padding-inline: 20px;
+    border: 2px solid var(--primary-text-color);
+    border-radius: 10px;
+}
+
+.category.active{
+    padding: 20px;
+    border: 2px solid var(--accent-text-color);
+}
+
 @media (max-width: 900px){
     .cases-items{
         gap: 20px;

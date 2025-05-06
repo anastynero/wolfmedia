@@ -19,7 +19,7 @@ export default function Case({data, slug, onToggleFavorite} : CaseProps){
     data?.poster?.image?.src || logo;
     const favoriteSlugs = useSelector((state: RootState) => state.favorites.favoritesSlugs);
     const curSlug = slug ? slug : data.slug
-    const isFavorite = favoriteSlugs.includes(curSlug);;
+    const isFavorite = favoriteSlugs.includes(curSlug);
 
     return(
         <Link href={`/cases/${curSlug}`} passHref>

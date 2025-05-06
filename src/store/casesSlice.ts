@@ -10,6 +10,7 @@ export interface CaseItem {
       mobile?: string;
     };
   };
+  source: [];
   tagsDisplayed: string; 
   slug: string;
   banner: {
@@ -45,10 +46,14 @@ const initialState: CasesState = {
   hasMore: true
 };
 
-export const fetchProducts = createAsyncThunk<CaseItem[], number>(
+export const fetchProducts = createAsyncThunk<CaseItem[], {offset: number; category?: string}>(
   'cases/fetchProducts',
-  async (offset = 0) => {
-    const response = await fetch(`https://api.cms.chulakov.dev/page/work?limit=10&offset=${offset}`);
+  async ({offset = 0, category}) => {
+    const url = category
+    ? `https://api.cms.chulakov.dev/page/work?limit=10&offset=${offset}&category=${category}`
+    : `https://api.cms.chulakov.dev/page/work?limit=10&offset=${offset}`;
+
+    const response = await fetch(url);
     const data = await response.json();
     return data.items;
   }
@@ -110,7 +115,7 @@ const casesSlice = createSlice({
       })
       .addCase(fetchCaseBySlug.rejected, (state, action) => {
         state.status = 'failed';
-        state.error = action.error.message || 'Failed to fetch case';
+        state.error = action.error.message || 'Ошибка при загрузке кейса';
       });
   },
 });
